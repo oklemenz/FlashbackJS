@@ -1,0 +1,250 @@
+{
+	"textures": [
+		{
+			"image": "flashback.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 109,
+				"h": 39
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "turn-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 6,
+						"w": 13,
+						"h": 39
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 13,
+						"h": 39
+					}
+				},
+				{
+					"filename": "turn-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 6,
+						"w": 12,
+						"h": 39
+					},
+					"frame": {
+						"x": 13,
+						"y": 0,
+						"w": 12,
+						"h": 39
+					}
+				},
+				{
+					"filename": "turn-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 6,
+						"w": 11,
+						"h": 39
+					},
+					"frame": {
+						"x": 25,
+						"y": 0,
+						"w": 11,
+						"h": 39
+					}
+				},
+				{
+					"filename": "turn-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 6,
+						"w": 11,
+						"h": 39
+					},
+					"frame": {
+						"x": 36,
+						"y": 0,
+						"w": 11,
+						"h": 39
+					}
+				},
+				{
+					"filename": "turn-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 6,
+						"w": 11,
+						"h": 39
+					},
+					"frame": {
+						"x": 47,
+						"y": 0,
+						"w": 11,
+						"h": 39
+					}
+				},
+				{
+					"filename": "turn-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 6,
+						"w": 11,
+						"h": 39
+					},
+					"frame": {
+						"x": 58,
+						"y": 0,
+						"w": 11,
+						"h": 39
+					}
+				},
+				{
+					"filename": "turn-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 6,
+						"w": 10,
+						"h": 39
+					},
+					"frame": {
+						"x": 69,
+						"y": 0,
+						"w": 10,
+						"h": 39
+					}
+				},
+				{
+					"filename": "turn-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 6,
+						"w": 9,
+						"h": 39
+					},
+					"frame": {
+						"x": 79,
+						"y": 0,
+						"w": 9,
+						"h": 39
+					}
+				},
+				{
+					"filename": "turn-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 6,
+						"w": 8,
+						"h": 39
+					},
+					"frame": {
+						"x": 88,
+						"y": 0,
+						"w": 8,
+						"h": 39
+					}
+				},
+				{
+					"filename": "stand-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 6,
+						"w": 7,
+						"h": 39
+					},
+					"frame": {
+						"x": 96,
+						"y": 0,
+						"w": 7,
+						"h": 39
+					}
+				},
+				{
+					"filename": "turn-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 6,
+						"w": 6,
+						"h": 39
+					},
+					"frame": {
+						"x": 103,
+						"y": 0,
+						"w": 6,
+						"h": 39
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7"
+	}
+}

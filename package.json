@@ -1,0 +1,23 @@
+{
+  "name": "flashback-js",
+  "version": "1.0.0",
+  "description": "Flashback (JavaScript)",
+  "main": "js/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "http-server --cors=*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oklemenz/FlashbackJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oklemenz/FlashbackJS/issues"
+  },
+  "homepage": "https://github.com/oklemenz/FlashbackJS#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
