@@ -4,12 +4,12 @@ Conrad's animation in Flashback
 
 ## Play GitHub Version
 
-- Browser: https://oklemenz.github.io/Flashback
+- Browser: https://oklemenz.github.io/FlashbackJS
 
 ## Play Locally
 
 - Install [Node.js](https://nodejs.org)
-- Clone: `https://github.com/oklemenz/Flashback.git`
+- Clone: `https://github.com/oklemenz/FlashbackJS.git`
 - Terminal:
   - `npm install`
   - `npm start`
