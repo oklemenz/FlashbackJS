@@ -1,56 +1,78 @@
 export const Actions = {
-  stand: { size: 1 },
-  turn: { size: 10, turn: true, next: "stand" },
-  // walk: { size: 20, next: "stand" },
-  // run: { size: 20, next: "walkstop" },
-  // jump: { size: 20, next: "walkstop" },
+  stand: { size: 1, previous: [], keys: [] },
+  turn: { size: 10, previous: ["stand"], next: "stand", keys: ["left", "right"], turn: true },
+  // walk: { size: 20, previous: ["stand"], next: "stand", keys: ["left", "right"] },
+  // run: { size: 20, previous: ["stand"], next: "walk", keys: ["left", "right"] },
+  // jump: { size: 20, previous: ["run"], next: "run", keys: ["left", "right"] },
 }
 
 export class Conrad extends Phaser.GameObjects.Sprite {
-
-  constructor (scene, x, y) {
+  constructor(scene, input, x, y) {
     super(scene, x, y);
+    this.input = input;
     this.state = "stand";
     this.action = null;
     this.perform("stand");
   }
 
-  perform(action) {
+  update() {
+    this.applyInput();
+  }
+
+  async applyInput() {
     if (this.action) {
-      return;
+      return false;
     }
-    this.action = Actions[action];
-    this.play(action).once("animationcomplete", () => {
-      if (this.action.turn) {
-        this.turn();
+    for (const name in Actions) {
+      const action = Actions[name];
+      if (action.previous.includes(this.state)) {
+        for (const key of action.keys) {
+          if (this.input[key].isDown) {
+            if (!action.turn || !this.isFacing(key)) {
+              await this.perform(name);
+              return true;
+            }
+          }
+        }
       }
-      const next = this.action.next;
-      this.action = null;
-      if (next) {
-        this.perform(next);
+    }
+    return false;
+  }
+
+  async perform(action) {
+    return new Promise((resolve) => {
+      if (this.action) {
+        return resolve();
       }
+      this.action = Actions[action];
+      this.play(action).once("animationcomplete", () => {
+        if (this.action.turn) {
+          this._turn();
+        }
+        const next = this.action.next;
+        this.action = null;
+        this.applyInput().then((busy) => {
+          if (!busy && next) {
+            return this.perform(next).then(resolve);
+          }
+        });
+      });
     });
   }
 
-  get looksLeft() {
+  isFacing(direction) {
+    return (direction === "left" && this.isFacingLeft()) || (direction === "right" && this.isFacingRight())
+  }
+
+  isFacingLeft() {
     return this.scaleX === 1;
   }
 
-  get looksRight() {
+  isFacingRight() {
     return this.scaleX === -1;
   }
 
-  turn() {
+  _turn() {
     this.scaleX *= -1;
-  }
-
-  inputs({left, right, up, down, fire, action}) {
-    if ((this.looksLeft && right) || (this.looksRight && left)) {
-      this.perform("turn");
-    }
-  }
-
-  preUpdate (time, delta)   {
-    super.preUpdate(time, delta);
   }
 }

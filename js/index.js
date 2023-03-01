@@ -6,56 +6,59 @@ new Phaser.Game({
   width: 320,
   height: 200,
   scene: {
-    init: () => {},
+    init: () => {
+    },
     preload,
     create,
     update,
   }
 });
 
+const keys = {
+  left: Phaser.Input.Keyboard.KeyCodes.LEFT,
+  right: Phaser.Input.Keyboard.KeyCodes.RIGHT,
+  up: Phaser.Input.Keyboard.KeyCodes.UP,
+  down: Phaser.Input.Keyboard.KeyCodes.DOWN,
+  fire: Phaser.Input.Keyboard.KeyCodes.SPACE,
+  action: Phaser.Input.Keyboard.KeyCodes.ENTER,
+};
+
 let conrad;
-let upKey;
-let downKey;
-let leftKey;
-let rightKey;
-let enterKey;
-let spaceKey;
+function create() {
+  setup(this);
+  conrad = new Conrad(this, keys,160, 100);
+  this.add.existing(conrad);
+}
+
+function update() {
+  conrad?.update();
+}
+
+function setup(scene) {
+  bindKeys(scene);
+  createAnimations(scene);
+}
+
+function bindKeys(scene) {
+  for (const key in keys) {
+    keys[key] = scene.input.keyboard.addKey(key);
+  }
+}
+
+function createAnimations(scene) {
+  for (const key in Actions) {
+    scene.anims.create({
+      key,
+      frameRate: 15,
+      frames: scene.anims.generateFrameNames("flashback", {
+        start: 0, end: (Actions[key].size || 1) - 1,
+        prefix: `${ key }-`, suffix: ".png",
+      })
+    });
+  }
+}
 
 function preload() {
   this.load.path = "assets/";
   this.load.multiatlas("flashback", "flashback.json");
-}
-
-function create() {
-  Object.keys(Actions).forEach((key) => {
-    const animation = Actions[key];
-    this.anims.create({
-      key,
-      frameRate: 15,
-      frames: this.anims.generateFrameNames("flashback", {
-        start: 0, end: (animation.size || 1) - 1,
-        prefix: `${ key }-`, suffix: ".png",
-      })
-    });
-  });
-  conrad = new Conrad(this, 160, 100);
-  this.add.existing(conrad);
-
-  leftKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
-  rightKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-  upKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
-  downKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN);
-  enterKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
-  spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-}
-
-function update() {
-  conrad?.inputs({
-    left: leftKey.isDown,
-    right: rightKey.isDown,
-    up: upKey.isDown,
-    down: downKey.isDown,
-    fire: spaceKey.isDown,
-    action: enterKey.isDown,
-  });
 }
