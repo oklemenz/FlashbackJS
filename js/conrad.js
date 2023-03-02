@@ -1,9 +1,17 @@
 export const Actions = {
   stand: { size: 1, previous: [], keys: [] },
   turn: { size: 10, previous: ["stand"], next: "stand", keys: ["left", "right"], turn: true },
-  // walk: { size: 20, previous: ["stand"], next: "stand", keys: ["left", "right"] },
-  // run: { size: 20, previous: ["stand"], next: "walk", keys: ["left", "right"] },
-  // jump: { size: 20, previous: ["run"], next: "run", keys: ["left", "right"] },
+  walk1: { size: 6, previous: ["stand", "walk2"], next: "stand", keys: ["left", "right"], x: 1 },
+  walk2: { size: 6, previous: ["walk1"], next: "stand", keys: ["left", "right"], x: 1 },
+  // startrun,
+  // run,
+  // runstop,
+  // jumpup,
+  // land,
+  // jump,
+  // runjump,
+  // crouch,
+  // roll,
 }
 
 export class Conrad extends Phaser.GameObjects.Sprite {
@@ -16,7 +24,19 @@ export class Conrad extends Phaser.GameObjects.Sprite {
   }
 
   update() {
+    this.move();
     this.applyInput();
+  }
+
+  move() {
+    if (this.action) {
+      if (this.action.x) {
+        this.x = Math.floor(this.x + this.action.x * (this.isFacingLeft() ? -1 : 1));
+      }
+      if (this.action.y) {
+        this.y = Math.floor(this.y + this.action.y / 10);
+      }
+    }
   }
 
   async applyInput() {
@@ -27,7 +47,11 @@ export class Conrad extends Phaser.GameObjects.Sprite {
       const action = Actions[name];
       if (action.previous.includes(this.state)) {
         for (const key of action.keys) {
-          if (this.input[key].isDown) {
+          const keyParts = key.split("+");
+          const allDown = keyParts.every((keyPart) => {
+            return this.input[keyPart].isDown;
+          });
+          if (allDown) {
             if (!action.turn || !this.isFacing(key)) {
               await this.perform(name);
               return true;
@@ -44,6 +68,7 @@ export class Conrad extends Phaser.GameObjects.Sprite {
       if (this.action) {
         return resolve();
       }
+      this.state = action;
       this.action = Actions[action];
       this.play(action).once("animationcomplete", () => {
         if (this.action.turn) {
@@ -61,7 +86,8 @@ export class Conrad extends Phaser.GameObjects.Sprite {
   }
 
   isFacing(direction) {
-    return (direction === "left" && this.isFacingLeft()) || (direction === "right" && this.isFacingRight())
+    return (direction.includes("left") && this.isFacingLeft()) ||
+      (direction.includes("right") && this.isFacingRight());
   }
 
   isFacingLeft() {

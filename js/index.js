@@ -49,7 +49,7 @@ function createAnimations(scene) {
   for (const key in Actions) {
     scene.anims.create({
       key,
-      frameRate: 15,
+      frameRate: 20,
       frames: scene.anims.generateFrameNames("flashback", {
         start: 0, end: (Actions[key].size || 1) - 1,
         prefix: `${ key }-`, suffix: ".png",
