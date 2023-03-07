@@ -1,10 +1,10 @@
-import { Conrad, Actions } from "./conrad.js";
+import Conrad from "./conrad.js";
 
 new Phaser.Game({
   type: Phaser.AUTO,
   parent: "game",
-  width: 320,
-  height: 200,
+  width: 256,
+  height: 224,
   scene: {
     init: () => {
     },
@@ -19,14 +19,17 @@ const keys = {
   right: Phaser.Input.Keyboard.KeyCodes.RIGHT,
   up: Phaser.Input.Keyboard.KeyCodes.UP,
   down: Phaser.Input.Keyboard.KeyCodes.DOWN,
-  fire: Phaser.Input.Keyboard.KeyCodes.SPACE,
+  draw: Phaser.Input.Keyboard.KeyCodes.SPACE,
+  fire: Phaser.Input.Keyboard.KeyCodes.SHIFT,
   action: Phaser.Input.Keyboard.KeyCodes.ENTER,
 };
 
 let conrad;
+
 function create() {
   setup(this);
-  conrad = new Conrad(this, keys,160, 100);
+  this.add.sprite(0, 0, "background").setOrigin(0, 0);
+  conrad = new Conrad(this, { x: 48, y: 32 }, { x: 8, y: 43 }, keys).setOrigin(0.5, 1);
   this.add.existing(conrad);
 }
 
@@ -41,17 +44,17 @@ function setup(scene) {
 
 function bindKeys(scene) {
   for (const key in keys) {
-    keys[key] = scene.input.keyboard.addKey(key);
+    keys[key] = scene.input.keyboard.addKey(keys[key]);
   }
 }
 
 function createAnimations(scene) {
-  for (const key in Actions) {
+  for (const key in Conrad.Actions) {
     scene.anims.create({
       key,
-      frameRate: 20,
-      frames: scene.anims.generateFrameNames("flashback", {
-        start: 0, end: (Actions[key].size || 1) - 1,
+      frameRate: 5,
+      frames: scene.anims.generateFrameNames("conrad", {
+        start: 0, end: (Conrad.Actions[key].size || 1) - 1,
         prefix: `${ key }-`, suffix: ".png",
       })
     });
@@ -60,5 +63,6 @@ function createAnimations(scene) {
 
 function preload() {
   this.load.path = "assets/";
-  this.load.multiatlas("flashback", "flashback.json");
+  this.load.multiatlas("conrad", "conrad.json");
+  this.load.image("background", "background.png");
 }

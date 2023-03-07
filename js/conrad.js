@@ -1,104 +1,29 @@
-export const Actions = {
-  stand: { size: 1, previous: [], keys: [] },
+import Actor from "./actor.js";
+
+const Actions = {
+  stand: { size: 1 },
+  standup: { size: 15, next: "stand" },
+  startrun: { size: 12, previous: ["stand", "walk1", "walk2"], next: "runstop", keys: ["left+fire", "right+fire"], x: 2 },
+  run1: { size: 5, previous: ["startrun", "run4"], next: "runstop", keys: ["left+fire", "right+fire"], x: 2 },
+  run2: { size: 5, previous: ["run1"], next: "runstop", keys: ["left+fire", "right+fire"], x: 2 },
+  run3: { size: 5, previous: ["run2"], next: "runstop", keys: ["left+fire", "right+fire"], x: 2 },
+  run4: { size: 5, previous: ["run3"], next: "runstop", keys: ["left+fire", "right+fire"], x: 2 },
+  runstop: { size: 12, previous: ["startrun", "run1", "run2", "run3", "run4"], next: "stand", keys: ["left+fire", "right+fire"], x: 1 },
   turn: { size: 10, previous: ["stand"], next: "stand", keys: ["left", "right"], turn: true },
-  walk1: { size: 6, previous: ["stand", "walk2"], next: "stand", keys: ["left", "right"], x: 1 },
-  walk2: { size: 6, previous: ["walk1"], next: "stand", keys: ["left", "right"], x: 1 },
-  // startrun,
-  // run,
-  // runstop,
+  walk1: { size: 6, previous: ["stand", "walk2", "startrun", "run1"], next: "stand", keys: ["left", "right"], x: 2 },
+  walk2: { size: 6, previous: ["walk1"], next: "stand", keys: ["left", "right"], x: 2 },
   // jumpup,
   // land,
-  // jump,
-  // runjump,
+  // jump: { size: 20, previous: ["stand"], next: "stand", keys: ["left", "right"], x: 8, dx: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0] },
+  // runjump: { size: 20, previous: ["run1", "run2"], next: "runstop", keys: ["left", "right"], x: 12,
   // crouch,
   // roll,
 }
 
-export class Conrad extends Phaser.GameObjects.Sprite {
-  constructor(scene, input, x, y) {
-    super(scene, x, y);
-    this.input = input;
-    this.state = "stand";
-    this.action = null;
-    this.perform("stand");
-  }
-
-  update() {
-    this.move();
-    this.applyInput();
-  }
-
-  move() {
-    if (this.action) {
-      if (this.action.x) {
-        this.x = Math.floor(this.x + this.action.x * (this.isFacingLeft() ? -1 : 1));
-      }
-      if (this.action.y) {
-        this.y = Math.floor(this.y + this.action.y / 10);
-      }
-    }
-  }
-
-  async applyInput() {
-    if (this.action) {
-      return false;
-    }
-    for (const name in Actions) {
-      const action = Actions[name];
-      if (action.previous.includes(this.state)) {
-        for (const key of action.keys) {
-          const keyParts = key.split("+");
-          const allDown = keyParts.every((keyPart) => {
-            return this.input[keyPart].isDown;
-          });
-          if (allDown) {
-            if (!action.turn || !this.isFacing(key)) {
-              await this.perform(name);
-              return true;
-            }
-          }
-        }
-      }
-    }
-    return false;
-  }
-
-  async perform(action) {
-    return new Promise((resolve) => {
-      if (this.action) {
-        return resolve();
-      }
-      this.state = action;
-      this.action = Actions[action];
-      this.play(action).once("animationcomplete", () => {
-        if (this.action.turn) {
-          this._turn();
-        }
-        const next = this.action.next;
-        this.action = null;
-        this.applyInput().then((busy) => {
-          if (!busy && next) {
-            return this.perform(next).then(resolve);
-          }
-        });
-      });
-    });
-  }
-
-  isFacing(direction) {
-    return (direction.includes("left") && this.isFacingLeft()) ||
-      (direction.includes("right") && this.isFacingRight());
-  }
-
-  isFacingLeft() {
-    return this.scaleX === 1;
-  }
-
-  isFacingRight() {
-    return this.scaleX === -1;
-  }
-
-  _turn() {
-    this.scaleX *= -1;
+export default class Conrad extends Actor {
+  constructor(scene, position, offset, input) {
+    super(scene, position, offset, Actions, input);
+    this.perform("standup");
   }
 }
+Conrad.Actions = Actions;
