@@ -50,11 +50,12 @@ function bindKeys(scene) {
 
 function createAnimations(scene) {
   for (const key in Conrad.Actions) {
+    const action = Conrad.Actions[key];
     scene.anims.create({
       key,
-      frameRate: 5,
+      frameRate: action.rate,
       frames: scene.anims.generateFrameNames("conrad", {
-        start: 0, end: (Conrad.Actions[key].size || 1) - 1,
+        start: 0, end: (action.size || 1) - 1,
         prefix: `${ key }-`, suffix: ".png",
       })
     });

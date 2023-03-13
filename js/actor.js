@@ -5,6 +5,9 @@ export default class Actor extends Phaser.GameObjects.Sprite {
     this.position = position;
     this.offset = offset;
     this.actions = actions;
+    for (const key in this.actions) {
+      this.actions[key].key = key;
+    }
     this.input = input;
     this.state = null;
     this.action = null;
@@ -13,7 +16,6 @@ export default class Actor extends Phaser.GameObjects.Sprite {
 
   update() {
     this._input();
-    console.log(this.state, this.x, this.y);
   }
 
   isFacingLeft() {
@@ -47,15 +49,26 @@ export default class Actor extends Phaser.GameObjects.Sprite {
   _bind() {
     this.on("animationstart", (animation, frame) => {
       this._move(animation.key, frame.index);
+      if (this.action.stop === frame.index) {
+        this.anims.stop();
+      }
     });
     this.on("animationupdate", (animation, frame) => {
       this._move(animation.key, frame.index);
+      if (this.action.stop === frame.index) {
+        this.anims.stop();
+      }
     });
     this.on("animationcomplete", (animation, frame) => {
       if (this.action.turn) {
         this._turn();
       }
-      this._align();
+      if (this.action.align !== false) {
+        this._align();
+      }
+      if (this.action.stop) {
+        return;
+      }
       const next = this.action.next;
       this.action = null;
       const busy = this._input();
@@ -91,31 +104,48 @@ export default class Actor extends Phaser.GameObjects.Sprite {
 
   _move(key, index) {
     if (this.action) {
-      let dx;
-      if (!isNaN(this.action.x)) {
+      if (this.action.skipFirst && index === 1 || this.action.skipLast && index === this.action.size) {
+        return;
+      }
+      let size = this.action.size;
+      if (this.action.skipFirst) {
+        size--;
+      }
+      if (this.action.skipLast) {
+        size--;
+      }
+      let x = 0;
+      if (Array.isArray(this.action.px)) {
+        x = this.action.px[index - 1];
+      } else if (!isNaN(this.action.x)) {
         if (Array.isArray(this.action.dx)) {
           const sum = this.action.dx.reduce((sum, v) => sum + v, 0);
-          dx = ((8 * this.action.x) / sum) * this.action.dx[index - 1];
+          x = ((8 * this.action.x) / sum) * this.action.dx[index - 1];
         } else {
-          dx = 8 * (this.action.x / this.action.size);
+          x = 8 * (this.action.x / size);
         }
       }
-      if (dx) {
-        this.position.x += dx * (this.isFacingLeft() ? -1 : 1);
+      if (x) {
+        this.position.x += x * (this.isFacingLeft() ? -1 : 1);
         this.x = Math.round(this.position.x + this.offset.x);
       }
-      let dy;
-      if (!isNaN(this.action.y)) {
+      let y = 0;
+      if (Array.isArray(this.action.py)) {
+        y = this.action.py[index - 1];
+      } else if (!isNaN(this.action.y)) {
         if (Array.isArray(this.action.dy)) {
           const sum = this.action.dy.reduce((sum, v) => sum + v, 0);
-          dy = ((8 * this.action.y) / sum) * this.action.dy[index - 1];
+          y = ((8 * this.action.y) / sum) * this.action.dy[index - 1];
         } else {
-          dy = 8 * (this.action.y / this.action.size);
+          y = 8 * (this.action.y / size);
         }
       }
-      if (dy) {
-        this.position.y += dy;
+      if (y) {
+        this.position.y += y;
         this.y = Math.round(this.position.y + this.offset.y);
+      }
+      if (this.action.log) {
+        console.log(this.action.key, index, this.position.x, this.position.y, x, y);
       }
     }
   }
