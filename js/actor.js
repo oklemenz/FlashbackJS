@@ -1,6 +1,6 @@
 export default class Actor extends Phaser.GameObjects.Sprite {
 
-  constructor(scene, position, offset, actions, input) {
+  constructor(scene, position, offset, actions, keys) {
     super(scene, position.x + offset.x, position.y + offset.y);
     this.position = position;
     this.offset = offset;
@@ -8,14 +8,25 @@ export default class Actor extends Phaser.GameObjects.Sprite {
     for (const key in this.actions) {
       this.actions[key].key = key;
     }
-    this.input = input;
+    this.actionNames = Object.keys(this.actions).sort((action1, action2) => {
+      return Math.max(0, ...(this.actions[action2].input || []).map((value) => {
+        return value.split("+").length;
+      })) - Math.max(0, ...(this.actions[action1].input || []).map((value) => {
+        return value.split("+").length;
+      }));
+    });
+    this.keys = keys;
+    this.env = {
+      atEdgeAbove: false, atEdgeBelow: false, atWall: false, atObject: false,
+    };
+    this.input = {};
     this.state = null;
     this.action = null;
     this._bind();
   }
 
   update() {
-    this._input();
+    this._processInput();
   }
 
   isFacingLeft() {
@@ -71,27 +82,32 @@ export default class Actor extends Phaser.GameObjects.Sprite {
       }
       const next = this.action.next;
       this.action = null;
-      const busy = this._input();
+      const busy = this._processInput();
       if (!busy && next) {
         this.perform(next);
       }
     });
   }
 
-  _input() {
+  _processInput() {
     if (this.action) {
       return false;
     }
-    for (const name in this.actions) {
+    this.input = {};
+    for (const key in this.keys) {
+      this.input[key] = this.keys[key].isDown;
+    }
+    this.input = { ...this.input, ...this.env };
+    for (const name of this.actionNames) {
       const action = this.actions[name];
       if ((action.previous || []).includes(this.state)) {
-        for (const key of action.keys || []) {
-          const keyParts = key.split("+");
-          const allDown = keyParts.every((keyPart) => {
-            return this.input[keyPart].isDown;
+        for (const input of action.input || []) {
+          const values = input.split("+");
+          const allSet = values.every((value) => {
+            return this.input[value];
           });
-          if (allDown) {
-            if (!action.turn || !this._isFacing(key)) {
+          if (allSet) {
+            if (!action.turn || !this._isFacing(input)) {
               this.perform(name);
               return true;
             }
