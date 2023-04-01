@@ -45,8 +45,9 @@ export default class Actor extends Phaser.GameObjects.Sprite {
       if (this.action) {
         return resolve();
       }
-      this.state = action;
       this.action = this.actions[action];
+      this._offset(this.action);
+      this.state = action;
       this.play(action).once("animationcomplete", () => {
         resolve();
       });
@@ -77,7 +78,7 @@ export default class Actor extends Phaser.GameObjects.Sprite {
       if (this.action.align !== false) {
         this._align();
       }
-      if (this.action.stop) {
+      if (this.action.stop === true) {
         return;
       }
       const next = this.action.next;
@@ -104,7 +105,8 @@ export default class Actor extends Phaser.GameObjects.Sprite {
         for (const input of action.input || []) {
           const values = input.split("+");
           const allSet = values.every((value) => {
-            return this.input[value];
+            return (!String(value).startsWith("!") && this.input[value]) ||
+              (String(value).startsWith("!") && !this.input[value]);
           });
           if (allSet) {
             if (!action.turn || !this._isFacing(input)) {
@@ -143,7 +145,6 @@ export default class Actor extends Phaser.GameObjects.Sprite {
       }
       if (x) {
         this.position.x += x * (this.isFacingLeft() ? -1 : 1);
-        this.x = Math.round(this.position.x + this.offset.x);
       }
       let y = 0;
       if (Array.isArray(this.action.py)) {
@@ -158,19 +159,42 @@ export default class Actor extends Phaser.GameObjects.Sprite {
       }
       if (y) {
         this.position.y += y;
-        this.y = Math.round(this.position.y + this.offset.y);
       }
-      if (this.action.log) {
-        console.log(this.action.key, index, this.position.x, this.position.y, x, y);
-      }
+      this._position();
+    }
+  }
+
+  _offset() {
+    if (this.action.ox && this.action.ox[this.state]) {
+      this.position.x += this.action.ox[this.state];
+    }
+    if (this.action.oy && this.action.oy[this.state]) {
+      this.position.y += this.action.oy[this.state];
+    }
+    this._position();
+  }
+
+  _position() {
+    this.x = Math.round(this.position.x + this.offset.x);
+    this.y = Math.round(this.position.y + this.offset.y);
+    if (this.action.log) {
+      console.log(this.action.key, index, this.position.x, this.position.y, x, y);
     }
   }
 
   _align() {
     this.position.x = Math.floor(Math.round(this.position.x) / 8) * 8;
-    this.x = this.position.x + this.offset.x;
     this.position.y = Math.floor((Math.round(this.position.y) - 32) / 72) * 72 + 32; // 32, 104, 176
+    const previous = { x: this.x, y: this.y };
+    this.x = this.position.x + this.offset.x;
     this.y = this.position.y + this.offset.y;
+    const index = this.anims.currentFrame.index;
+    if (previous.x !== this.x) {
+      console.log("misaligned-x", this.action.key, index, this.x, previous.x);
+    }
+    if (previous.y !== this.y) {
+      console.log("misaligned-y", this.action.key, index, this.y, previous.y);
+    }
   }
 
   _turn() {

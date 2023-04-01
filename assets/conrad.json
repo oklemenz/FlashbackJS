@@ -4,13 +4,13 @@
 			"image": "conrad.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 234,
-				"h": 227
+				"w": 274,
+				"h": 292
 			},
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "turn-4.png",
+					"filename": "jumpup-16.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -18,20 +18,62 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 8,
-						"y": 6,
+						"x": 10,
+						"y": 0,
 						"w": 12,
-						"h": 39
+						"h": 45
 					},
 					"frame": {
 						"x": 0,
 						"y": 0,
 						"w": 12,
-						"h": 39
+						"h": 45
 					}
 				},
 				{
-					"filename": "walk2-0.png",
+					"filename": "jumpup-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 0,
+						"w": 12,
+						"h": 45
+					},
+					"frame": {
+						"x": 12,
+						"y": 0,
+						"w": 12,
+						"h": 45
+					}
+				},
+				{
+					"filename": "jumpupland-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 0,
+						"w": 7,
+						"h": 45
+					},
+					"frame": {
+						"x": 24,
+						"y": 0,
+						"w": 7,
+						"h": 45
+					}
+				},
+				{
+					"filename": "jumpup-15.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -40,15 +82,57 @@
 					},
 					"spriteSourceSize": {
 						"x": 11,
-						"y": 6,
-						"w": 10,
-						"h": 39
-					},
-					"frame": {
-						"x": 12,
 						"y": 0,
 						"w": 10,
-						"h": 39
+						"h": 45
+					},
+					"frame": {
+						"x": 31,
+						"y": 0,
+						"w": 10,
+						"h": 45
+					}
+				},
+				{
+					"filename": "jumpup-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 2,
+						"w": 9,
+						"h": 43
+					},
+					"frame": {
+						"x": 41,
+						"y": 0,
+						"w": 9,
+						"h": 43
+					}
+				},
+				{
+					"filename": "jumpupland-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 3,
+						"w": 8,
+						"h": 42
+					},
+					"frame": {
+						"x": 0,
+						"y": 45,
+						"w": 8,
+						"h": 42
 					}
 				},
 				{
@@ -66,14 +150,14 @@
 						"h": 39
 					},
 					"frame": {
-						"x": 22,
-						"y": 0,
+						"x": 41,
+						"y": 43,
 						"w": 7,
 						"h": 39
 					}
 				},
 				{
-					"filename": "runstop-10.png",
+					"filename": "jumpupland-9.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -81,20 +165,20 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 12,
+						"x": 8,
 						"y": 6,
-						"w": 8,
+						"w": 11,
 						"h": 39
 					},
 					"frame": {
-						"x": 29,
-						"y": 0,
-						"w": 8,
+						"x": 8,
+						"y": 45,
+						"w": 11,
 						"h": 39
 					}
 				},
 				{
-					"filename": "startrun-0.png",
+					"filename": "crouch-0.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -102,15 +186,36 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 10,
+						"x": 11,
 						"y": 6,
-						"w": 8,
+						"w": 6,
 						"h": 39
 					},
 					"frame": {
-						"x": 37,
+						"x": 19,
+						"y": 45,
+						"w": 6,
+						"h": 39
+					}
+				},
+				{
+					"filename": "run1-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 6,
+						"w": 18,
+						"h": 39
+					},
+					"frame": {
+						"x": 50,
 						"y": 0,
-						"w": 8,
+						"w": 18,
 						"h": 39
 					}
 				},
@@ -129,8 +234,8 @@
 						"h": 39
 					},
 					"frame": {
-						"x": 0,
-						"y": 39,
+						"x": 25,
+						"y": 45,
 						"w": 7,
 						"h": 39
 					}
@@ -150,8 +255,8 @@
 						"h": 39
 					},
 					"frame": {
-						"x": 7,
-						"y": 39,
+						"x": 32,
+						"y": 45,
 						"w": 8,
 						"h": 39
 					}
@@ -171,8 +276,8 @@
 						"h": 39
 					},
 					"frame": {
-						"x": 15,
-						"y": 39,
+						"x": 48,
+						"y": 43,
 						"w": 11,
 						"h": 39
 					}
@@ -192,8 +297,8 @@
 						"h": 39
 					},
 					"frame": {
-						"x": 26,
-						"y": 39,
+						"x": 68,
+						"y": 0,
 						"w": 11,
 						"h": 39
 					}
@@ -213,14 +318,14 @@
 						"h": 39
 					},
 					"frame": {
-						"x": 37,
+						"x": 59,
 						"y": 39,
 						"w": 11,
 						"h": 39
 					}
 				},
 				{
-					"filename": "run1-4.png",
+					"filename": "turn-4.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -228,15 +333,15 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 9,
+						"x": 8,
 						"y": 6,
-						"w": 18,
+						"w": 12,
 						"h": 39
 					},
 					"frame": {
-						"x": 45,
+						"x": 79,
 						"y": 0,
-						"w": 18,
+						"w": 12,
 						"h": 39
 					}
 				},
@@ -255,7 +360,7 @@
 						"h": 39
 					},
 					"frame": {
-						"x": 48,
+						"x": 70,
 						"y": 39,
 						"w": 13,
 						"h": 39
@@ -276,8 +381,8 @@
 						"h": 39
 					},
 					"frame": {
-						"x": 61,
-						"y": 39,
+						"x": 0,
+						"y": 87,
 						"w": 10,
 						"h": 39
 					}
@@ -297,8 +402,8 @@
 						"h": 39
 					},
 					"frame": {
-						"x": 63,
-						"y": 0,
+						"x": 10,
+						"y": 84,
 						"w": 11,
 						"h": 39
 					}
@@ -318,8 +423,8 @@
 						"h": 39
 					},
 					"frame": {
-						"x": 71,
-						"y": 39,
+						"x": 21,
+						"y": 84,
 						"w": 9,
 						"h": 39
 					}
@@ -339,8 +444,8 @@
 						"h": 39
 					},
 					"frame": {
-						"x": 74,
-						"y": 0,
+						"x": 83,
+						"y": 39,
 						"w": 6,
 						"h": 39
 					}
@@ -360,14 +465,14 @@
 						"h": 39
 					},
 					"frame": {
-						"x": 0,
-						"y": 78,
+						"x": 30,
+						"y": 84,
 						"w": 10,
 						"h": 39
 					}
 				},
 				{
-					"filename": "walk1-4.png",
+					"filename": "runstop-10.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -375,15 +480,78 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 10,
+						"x": 12,
 						"y": 6,
-						"w": 16,
+						"w": 8,
 						"h": 39
 					},
 					"frame": {
-						"x": 10,
+						"x": 40,
+						"y": 82,
+						"w": 8,
+						"h": 39
+					}
+				},
+				{
+					"filename": "jumpup-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 6,
+						"w": 12,
+						"h": 39
+					},
+					"frame": {
+						"x": 48,
+						"y": 82,
+						"w": 12,
+						"h": 39
+					}
+				},
+				{
+					"filename": "jumpup-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 6,
+						"w": 11,
+						"h": 39
+					},
+					"frame": {
+						"x": 60,
 						"y": 78,
-						"w": 16,
+						"w": 11,
+						"h": 39
+					}
+				},
+				{
+					"filename": "jumpup-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 6,
+						"w": 7,
+						"h": 39
+					},
+					"frame": {
+						"x": 71,
+						"y": 78,
+						"w": 7,
 						"h": 39
 					}
 				},
@@ -402,287 +570,14 @@
 						"h": 39
 					},
 					"frame": {
-						"x": 26,
+						"x": 78,
 						"y": 78,
 						"w": 11,
 						"h": 39
 					}
 				},
 				{
-					"filename": "startrun-2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 7,
-						"w": 11,
-						"h": 38
-					},
-					"frame": {
-						"x": 37,
-						"y": 78,
-						"w": 11,
-						"h": 38
-					}
-				},
-				{
-					"filename": "run3-4.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 6,
-						"w": 19,
-						"h": 38
-					},
-					"frame": {
-						"x": 48,
-						"y": 78,
-						"w": 19,
-						"h": 38
-					}
-				},
-				{
-					"filename": "run3-3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 7,
-						"w": 17,
-						"h": 38
-					},
-					"frame": {
-						"x": 67,
-						"y": 78,
-						"w": 17,
-						"h": 38
-					}
-				},
-				{
-					"filename": "startrun-11.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 6,
-						"y": 7,
-						"w": 20,
-						"h": 38
-					},
-					"frame": {
-						"x": 80,
-						"y": 0,
-						"w": 20,
-						"h": 38
-					}
-				},
-				{
-					"filename": "startrun-1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 9,
-						"y": 7,
-						"w": 10,
-						"h": 38
-					},
-					"frame": {
-						"x": 80,
-						"y": 38,
-						"w": 10,
-						"h": 38
-					}
-				},
-				{
-					"filename": "run3-2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 9,
-						"y": 7,
-						"w": 13,
-						"h": 38
-					},
-					"frame": {
-						"x": 84,
-						"y": 76,
-						"w": 13,
-						"h": 38
-					}
-				},
-				{
-					"filename": "run2-1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 7,
-						"y": 6,
-						"w": 25,
-						"h": 38
-					},
-					"frame": {
-						"x": 90,
-						"y": 38,
-						"w": 25,
-						"h": 38
-					}
-				},
-				{
-					"filename": "standup-14.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 7,
-						"w": 8,
-						"h": 38
-					},
-					"frame": {
-						"x": 100,
-						"y": 0,
-						"w": 8,
-						"h": 38
-					}
-				},
-				{
-					"filename": "walk1-1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 8,
-						"y": 7,
-						"w": 13,
-						"h": 38
-					},
-					"frame": {
-						"x": 108,
-						"y": 0,
-						"w": 13,
-						"h": 38
-					}
-				},
-				{
-					"filename": "walk1-2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 4,
-						"y": 7,
-						"w": 20,
-						"h": 38
-					},
-					"frame": {
-						"x": 97,
-						"y": 76,
-						"w": 20,
-						"h": 38
-					}
-				},
-				{
-					"filename": "walk1-3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 6,
-						"y": 7,
-						"w": 20,
-						"h": 38
-					},
-					"frame": {
-						"x": 0,
-						"y": 117,
-						"w": 20,
-						"h": 38
-					}
-				},
-				{
-					"filename": "preparestop-2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 7,
-						"w": 13,
-						"h": 38
-					},
-					"frame": {
-						"x": 20,
-						"y": 117,
-						"w": 13,
-						"h": 38
-					}
-				},
-				{
-					"filename": "run1-3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 9,
-						"y": 7,
-						"w": 17,
-						"h": 38
-					},
-					"frame": {
-						"x": 33,
-						"y": 117,
-						"w": 17,
-						"h": 38
-					}
-				},
-				{
-					"filename": "runstop-9.png",
+					"filename": "walk2-0.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -691,19 +586,19 @@
 					},
 					"spriteSourceSize": {
 						"x": 11,
-						"y": 7,
-						"w": 12,
-						"h": 38
+						"y": 6,
+						"w": 10,
+						"h": 39
 					},
 					"frame": {
-						"x": 50,
-						"y": 116,
-						"w": 12,
-						"h": 38
+						"x": 91,
+						"y": 0,
+						"w": 10,
+						"h": 39
 					}
 				},
 				{
-					"filename": "walk2-1.png",
+					"filename": "startrun-0.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -711,16 +606,37 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 6,
-						"y": 7,
-						"w": 17,
-						"h": 38
+						"x": 10,
+						"y": 6,
+						"w": 8,
+						"h": 39
 					},
 					"frame": {
-						"x": 62,
-						"y": 116,
-						"w": 17,
-						"h": 38
+						"x": 89,
+						"y": 39,
+						"w": 8,
+						"h": 39
+					}
+				},
+				{
+					"filename": "walk1-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 6,
+						"w": 16,
+						"h": 39
+					},
+					"frame": {
+						"x": 101,
+						"y": 0,
+						"w": 16,
+						"h": 39
 					}
 				},
 				{
@@ -738,8 +654,8 @@
 						"h": 38
 					},
 					"frame": {
-						"x": 79,
-						"y": 116,
+						"x": 89,
+						"y": 78,
 						"w": 21,
 						"h": 38
 					}
@@ -759,9 +675,156 @@
 						"h": 38
 					},
 					"frame": {
-						"x": 100,
-						"y": 114,
+						"x": 97,
+						"y": 39,
 						"w": 11,
+						"h": 38
+					}
+				},
+				{
+					"filename": "walk2-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 7,
+						"w": 17,
+						"h": 38
+					},
+					"frame": {
+						"x": 117,
+						"y": 0,
+						"w": 17,
+						"h": 38
+					}
+				},
+				{
+					"filename": "startrun-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 7,
+						"w": 10,
+						"h": 38
+					},
+					"frame": {
+						"x": 108,
+						"y": 39,
+						"w": 10,
+						"h": 38
+					}
+				},
+				{
+					"filename": "startrun-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 7,
+						"w": 20,
+						"h": 38
+					},
+					"frame": {
+						"x": 110,
+						"y": 77,
+						"w": 20,
+						"h": 38
+					}
+				},
+				{
+					"filename": "startrun-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 7,
+						"w": 11,
+						"h": 38
+					},
+					"frame": {
+						"x": 118,
+						"y": 38,
+						"w": 11,
+						"h": 38
+					}
+				},
+				{
+					"filename": "walk1-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 7,
+						"w": 20,
+						"h": 38
+					},
+					"frame": {
+						"x": 0,
+						"y": 126,
+						"w": 20,
+						"h": 38
+					}
+				},
+				{
+					"filename": "run3-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 6,
+						"w": 19,
+						"h": 38
+					},
+					"frame": {
+						"x": 20,
+						"y": 123,
+						"w": 19,
+						"h": 38
+					}
+				},
+				{
+					"filename": "walk1-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 7,
+						"w": 20,
+						"h": 38
+					},
+					"frame": {
+						"x": 39,
+						"y": 123,
+						"w": 20,
 						"h": 38
 					}
 				},
@@ -780,14 +843,14 @@
 						"h": 38
 					},
 					"frame": {
-						"x": 115,
-						"y": 38,
+						"x": 59,
+						"y": 121,
 						"w": 16,
 						"h": 38
 					}
 				},
 				{
-					"filename": "walk2-3.png",
+					"filename": "preparestop-2.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -795,13 +858,244 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 6,
+						"x": 10,
+						"y": 7,
+						"w": 13,
+						"h": 38
+					},
+					"frame": {
+						"x": 75,
+						"y": 117,
+						"w": 13,
+						"h": 38
+					}
+				},
+				{
+					"filename": "run3-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 7,
+						"w": 13,
+						"h": 38
+					},
+					"frame": {
+						"x": 88,
+						"y": 117,
+						"w": 13,
+						"h": 38
+					}
+				},
+				{
+					"filename": "walk1-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 7,
+						"w": 13,
+						"h": 38
+					},
+					"frame": {
+						"x": 101,
+						"y": 116,
+						"w": 13,
+						"h": 38
+					}
+				},
+				{
+					"filename": "standjump-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 7,
+						"w": 8,
+						"h": 38
+					},
+					"frame": {
+						"x": 114,
+						"y": 115,
+						"w": 8,
+						"h": 38
+					}
+				},
+				{
+					"filename": "crouch-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 7,
+						"w": 10,
+						"h": 38
+					},
+					"frame": {
+						"x": 122,
+						"y": 115,
+						"w": 10,
+						"h": 38
+					}
+				},
+				{
+					"filename": "run2-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 6,
+						"w": 25,
+						"h": 38
+					},
+					"frame": {
+						"x": 134,
+						"y": 0,
+						"w": 25,
+						"h": 38
+					}
+				},
+				{
+					"filename": "runstop-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 7,
+						"w": 12,
+						"h": 38
+					},
+					"frame": {
+						"x": 129,
+						"y": 38,
+						"w": 12,
+						"h": 38
+					}
+				},
+				{
+					"filename": "standup-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 7,
+						"w": 8,
+						"h": 38
+					},
+					"frame": {
+						"x": 130,
+						"y": 76,
+						"w": 8,
+						"h": 38
+					}
+				},
+				{
+					"filename": "run1-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 7,
+						"w": 17,
+						"h": 38
+					},
+					"frame": {
+						"x": 141,
+						"y": 38,
+						"w": 17,
+						"h": 38
+					}
+				},
+				{
+					"filename": "run3-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 7,
+						"w": 17,
+						"h": 38
+					},
+					"frame": {
+						"x": 138,
+						"y": 76,
+						"w": 17,
+						"h": 38
+					}
+				},
+				{
+					"filename": "run3-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 8,
+						"w": 17,
+						"h": 37
+					},
+					"frame": {
+						"x": 132,
+						"y": 114,
+						"w": 17,
+						"h": 37
+					}
+				},
+				{
+					"filename": "run2-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 9,
 						"y": 8,
 						"w": 20,
 						"h": 37
 					},
 					"frame": {
-						"x": 121,
+						"x": 159,
 						"y": 0,
 						"w": 20,
 						"h": 37
@@ -822,93 +1116,9 @@
 						"h": 37
 					},
 					"frame": {
-						"x": 117,
-						"y": 76,
+						"x": 158,
+						"y": 38,
 						"w": 21,
-						"h": 37
-					}
-				},
-				{
-					"filename": "run4-1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 6,
-						"y": 8,
-						"w": 25,
-						"h": 37
-					},
-					"frame": {
-						"x": 111,
-						"y": 114,
-						"w": 25,
-						"h": 37
-					}
-				},
-				{
-					"filename": "preparestop-0.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 8,
-						"y": 8,
-						"w": 17,
-						"h": 37
-					},
-					"frame": {
-						"x": 141,
-						"y": 0,
-						"w": 17,
-						"h": 37
-					}
-				},
-				{
-					"filename": "startrun-3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 6,
-						"y": 8,
-						"w": 16,
-						"h": 37
-					},
-					"frame": {
-						"x": 131,
-						"y": 37,
-						"w": 16,
-						"h": 37
-					}
-				},
-				{
-					"filename": "run3-0.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 10,
-						"y": 8,
-						"w": 17,
-						"h": 37
-					},
-					"frame": {
-						"x": 138,
-						"y": 74,
-						"w": 17,
 						"h": 37
 					}
 				},
@@ -927,9 +1137,30 @@
 						"h": 37
 					},
 					"frame": {
-						"x": 0,
-						"y": 155,
+						"x": 155,
+						"y": 76,
 						"w": 23,
+						"h": 37
+					}
+				},
+				{
+					"filename": "run4-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 8,
+						"w": 22,
+						"h": 37
+					},
+					"frame": {
+						"x": 155,
+						"y": 113,
+						"w": 22,
 						"h": 37
 					}
 				},
@@ -948,35 +1179,14 @@
 						"h": 37
 					},
 					"frame": {
-						"x": 23,
-						"y": 155,
+						"x": 0,
+						"y": 164,
 						"w": 27,
 						"h": 37
 					}
 				},
 				{
-					"filename": "run2-0.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 9,
-						"y": 8,
-						"w": 20,
-						"h": 37
-					},
-					"frame": {
-						"x": 138,
-						"y": 111,
-						"w": 20,
-						"h": 37
-					}
-				},
-				{
-					"filename": "run1-2.png",
+					"filename": "standjump-19.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -986,13 +1196,55 @@
 					"spriteSourceSize": {
 						"x": 10,
 						"y": 8,
-						"w": 14,
+						"w": 8,
 						"h": 37
 					},
 					"frame": {
-						"x": 50,
-						"y": 154,
-						"w": 14,
+						"x": 27,
+						"y": 161,
+						"w": 8,
+						"h": 37
+					}
+				},
+				{
+					"filename": "runstop-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 8,
+						"w": 12,
+						"h": 37
+					},
+					"frame": {
+						"x": 35,
+						"y": 161,
+						"w": 12,
+						"h": 37
+					}
+				},
+				{
+					"filename": "preparestop-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 8,
+						"w": 17,
+						"h": 37
+					},
+					"frame": {
+						"x": 47,
+						"y": 161,
+						"w": 17,
 						"h": 37
 					}
 				},
@@ -1012,13 +1264,13 @@
 					},
 					"frame": {
 						"x": 64,
-						"y": 154,
+						"y": 159,
 						"w": 18,
 						"h": 37
 					}
 				},
 				{
-					"filename": "runstop-8.png",
+					"filename": "walk2-3.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -1026,20 +1278,20 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 12,
+						"x": 6,
 						"y": 8,
-						"w": 12,
+						"w": 20,
 						"h": 37
 					},
 					"frame": {
 						"x": 82,
-						"y": 154,
-						"w": 12,
+						"y": 155,
+						"w": 20,
 						"h": 37
 					}
 				},
 				{
-					"filename": "run4-4.png",
+					"filename": "run1-2.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -1047,20 +1299,20 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 8,
+						"x": 10,
 						"y": 8,
-						"w": 22,
+						"w": 14,
 						"h": 37
 					},
 					"frame": {
-						"x": 136,
-						"y": 148,
-						"w": 22,
+						"x": 102,
+						"y": 154,
+						"w": 14,
 						"h": 37
 					}
 				},
 				{
-					"filename": "run4-3.png",
+					"filename": "startrun-3.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -1068,15 +1320,57 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 4,
+						"x": 6,
+						"y": 8,
+						"w": 16,
+						"h": 37
+					},
+					"frame": {
+						"x": 116,
+						"y": 153,
+						"w": 16,
+						"h": 37
+					}
+				},
+				{
+					"filename": "run4-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 8,
+						"w": 25,
+						"h": 37
+					},
+					"frame": {
+						"x": 149,
+						"y": 150,
+						"w": 25,
+						"h": 37
+					}
+				},
+				{
+					"filename": "run1-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 13,
 						"y": 9,
-						"w": 28,
+						"w": 14,
 						"h": 36
 					},
 					"frame": {
-						"x": 94,
-						"y": 154,
-						"w": 28,
+						"x": 132,
+						"y": 151,
+						"w": 14,
 						"h": 36
 					}
 				},
@@ -1095,9 +1389,93 @@
 						"h": 36
 					},
 					"frame": {
-						"x": 158,
+						"x": 179,
 						"y": 0,
 						"w": 22,
+						"h": 36
+					}
+				},
+				{
+					"filename": "run2-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 7,
+						"w": 26,
+						"h": 36
+					},
+					"frame": {
+						"x": 174,
+						"y": 150,
+						"w": 26,
+						"h": 36
+					}
+				},
+				{
+					"filename": "jumpup-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 9,
+						"w": 15,
+						"h": 36
+					},
+					"frame": {
+						"x": 177,
+						"y": 113,
+						"w": 15,
+						"h": 36
+					}
+				},
+				{
+					"filename": "runstop-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 9,
+						"w": 22,
+						"h": 36
+					},
+					"frame": {
+						"x": 179,
+						"y": 36,
+						"w": 22,
+						"h": 36
+					}
+				},
+				{
+					"filename": "crouch-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 9,
+						"w": 12,
+						"h": 36
+					},
+					"frame": {
+						"x": 178,
+						"y": 75,
+						"w": 12,
 						"h": 36
 					}
 				},
@@ -1116,29 +1494,8 @@
 						"h": 36
 					},
 					"frame": {
-						"x": 147,
-						"y": 37,
-						"w": 12,
-						"h": 36
-					}
-				},
-				{
-					"filename": "preparestop-1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 11,
-						"y": 9,
-						"w": 12,
-						"h": 36
-					},
-					"frame": {
-						"x": 122,
-						"y": 151,
+						"x": 201,
+						"y": 0,
 						"w": 12,
 						"h": 36
 					}
@@ -1158,14 +1515,14 @@
 						"h": 36
 					},
 					"frame": {
-						"x": 180,
-						"y": 0,
+						"x": 0,
+						"y": 201,
 						"w": 26,
 						"h": 36
 					}
 				},
 				{
-					"filename": "run4-2.png",
+					"filename": "preparestop-1.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -1173,15 +1530,36 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 4,
+						"x": 11,
 						"y": 9,
-						"w": 28,
+						"w": 12,
 						"h": 36
 					},
 					"frame": {
-						"x": 155,
-						"y": 73,
-						"w": 28,
+						"x": 201,
+						"y": 36,
+						"w": 12,
+						"h": 36
+					}
+				},
+				{
+					"filename": "jumpupland-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 9,
+						"w": 12,
+						"h": 36
+					},
+					"frame": {
+						"x": 26,
+						"y": 201,
+						"w": 12,
 						"h": 36
 					}
 				},
@@ -1200,51 +1578,9 @@
 						"h": 36
 					},
 					"frame": {
-						"x": 159,
-						"y": 36,
+						"x": 38,
+						"y": 198,
 						"w": 16,
-						"h": 36
-					}
-				},
-				{
-					"filename": "run1-1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 13,
-						"y": 9,
-						"w": 14,
-						"h": 36
-					},
-					"frame": {
-						"x": 175,
-						"y": 36,
-						"w": 14,
-						"h": 36
-					}
-				},
-				{
-					"filename": "runstop-2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 5,
-						"y": 9,
-						"w": 22,
-						"h": 36
-					},
-					"frame": {
-						"x": 183,
-						"y": 72,
-						"w": 22,
 						"h": 36
 					}
 				},
@@ -1263,14 +1599,14 @@
 						"h": 36
 					},
 					"frame": {
-						"x": 183,
-						"y": 108,
+						"x": 192,
+						"y": 72,
 						"w": 19,
 						"h": 36
 					}
 				},
 				{
-					"filename": "run2-2.png",
+					"filename": "run4-2.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -1278,15 +1614,36 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 6,
-						"y": 7,
-						"w": 26,
+						"x": 4,
+						"y": 9,
+						"w": 28,
 						"h": 36
 					},
 					"frame": {
-						"x": 158,
-						"y": 144,
-						"w": 26,
+						"x": 54,
+						"y": 198,
+						"w": 28,
+						"h": 36
+					}
+				},
+				{
+					"filename": "run4-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 9,
+						"w": 28,
+						"h": 36
+					},
+					"frame": {
+						"x": 82,
+						"y": 192,
+						"w": 28,
 						"h": 36
 					}
 				},
@@ -1305,8 +1662,92 @@
 						"h": 35
 					},
 					"frame": {
-						"x": 158,
-						"y": 109,
+						"x": 200,
+						"y": 108,
+						"w": 12,
+						"h": 35
+					}
+				},
+				{
+					"filename": "standjump-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 11,
+						"w": 27,
+						"h": 35
+					},
+					"frame": {
+						"x": 110,
+						"y": 191,
+						"w": 27,
+						"h": 35
+					}
+				},
+				{
+					"filename": "standjump-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 10,
+						"w": 10,
+						"h": 35
+					},
+					"frame": {
+						"x": 200,
+						"y": 143,
+						"w": 10,
+						"h": 35
+					}
+				},
+				{
+					"filename": "runstop-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 10,
+						"w": 28,
+						"h": 35
+					},
+					"frame": {
+						"x": 174,
+						"y": 186,
+						"w": 28,
+						"h": 35
+					}
+				},
+				{
+					"filename": "standup-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 10,
+						"w": 12,
+						"h": 35
+					},
+					"frame": {
+						"x": 137,
+						"y": 187,
 						"w": 12,
 						"h": 35
 					}
@@ -1326,73 +1767,10 @@
 						"h": 35
 					},
 					"frame": {
-						"x": 184,
-						"y": 144,
+						"x": 149,
+						"y": 187,
 						"w": 22,
 						"h": 35
-					}
-				},
-				{
-					"filename": "standup-13.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 6,
-						"y": 10,
-						"w": 12,
-						"h": 35
-					},
-					"frame": {
-						"x": 170,
-						"y": 109,
-						"w": 12,
-						"h": 35
-					}
-				},
-				{
-					"filename": "runstop-1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 2,
-						"y": 10,
-						"w": 28,
-						"h": 35
-					},
-					"frame": {
-						"x": 0,
-						"y": 192,
-						"w": 28,
-						"h": 35
-					}
-				},
-				{
-					"filename": "startrun-7.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 4,
-						"y": 11,
-						"w": 24,
-						"h": 34
-					},
-					"frame": {
-						"x": 28,
-						"y": 192,
-						"w": 24,
-						"h": 34
 					}
 				},
 				{
@@ -1410,9 +1788,51 @@
 						"h": 34
 					},
 					"frame": {
-						"x": 52,
-						"y": 191,
+						"x": 213,
+						"y": 0,
 						"w": 18,
+						"h": 34
+					}
+				},
+				{
+					"filename": "jumpupland-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 11,
+						"w": 10,
+						"h": 34
+					},
+					"frame": {
+						"x": 211,
+						"y": 72,
+						"w": 10,
+						"h": 34
+					}
+				},
+				{
+					"filename": "startrun-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 11,
+						"w": 24,
+						"h": 34
+					},
+					"frame": {
+						"x": 202,
+						"y": 178,
+						"w": 24,
 						"h": 34
 					}
 				},
@@ -1431,10 +1851,136 @@
 						"h": 33
 					},
 					"frame": {
-						"x": 184,
-						"y": 179,
+						"x": 210,
+						"y": 143,
 						"w": 21,
 						"h": 33
+					}
+				},
+				{
+					"filename": "standjump-18.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 12,
+						"w": 11,
+						"h": 33
+					},
+					"frame": {
+						"x": 212,
+						"y": 106,
+						"w": 11,
+						"h": 33
+					}
+				},
+				{
+					"filename": "standjump-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 12,
+						"w": 12,
+						"h": 33
+					},
+					"frame": {
+						"x": 213,
+						"y": 34,
+						"w": 12,
+						"h": 33
+					}
+				},
+				{
+					"filename": "standjump-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 12,
+						"w": 27,
+						"h": 33
+					},
+					"frame": {
+						"x": 231,
+						"y": 0,
+						"w": 27,
+						"h": 33
+					}
+				},
+				{
+					"filename": "jumpup-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 12,
+						"w": 15,
+						"h": 33
+					},
+					"frame": {
+						"x": 221,
+						"y": 67,
+						"w": 15,
+						"h": 33
+					}
+				},
+				{
+					"filename": "jumpup-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 13,
+						"w": 16,
+						"h": 32
+					},
+					"frame": {
+						"x": 225,
+						"y": 34,
+						"w": 16,
+						"h": 32
+					}
+				},
+				{
+					"filename": "standjump-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 9,
+						"w": 28,
+						"h": 32
+					},
+					"frame": {
+						"x": 226,
+						"y": 176,
+						"w": 28,
+						"h": 32
 					}
 				},
 				{
@@ -1452,10 +1998,31 @@
 						"h": 32
 					},
 					"frame": {
-						"x": 189,
-						"y": 36,
+						"x": 241,
+						"y": 33,
 						"w": 15,
 						"h": 32
+					}
+				},
+				{
+					"filename": "standjump-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 14,
+						"w": 16,
+						"h": 31
+					},
+					"frame": {
+						"x": 241,
+						"y": 65,
+						"w": 16,
+						"h": 31
 					}
 				},
 				{
@@ -1473,9 +2040,30 @@
 						"h": 31
 					},
 					"frame": {
-						"x": 70,
-						"y": 191,
+						"x": 236,
+						"y": 96,
 						"w": 17,
+						"h": 31
+					}
+				},
+				{
+					"filename": "standjump-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 14,
+						"w": 22,
+						"h": 31
+					},
+					"frame": {
+						"x": 231,
+						"y": 127,
+						"w": 22,
 						"h": 31
 					}
 				},
@@ -1494,14 +2082,14 @@
 						"h": 31
 					},
 					"frame": {
-						"x": 158,
-						"y": 180,
+						"x": 0,
+						"y": 237,
 						"w": 24,
 						"h": 31
 					}
 				},
 				{
-					"filename": "standup-3.png",
+					"filename": "standjump-11.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -1509,16 +2097,16 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 1,
-						"y": 37,
-						"w": 30,
-						"h": 8
+						"x": 2,
+						"y": 11,
+						"w": 29,
+						"h": 31
 					},
 					"frame": {
-						"x": 122,
-						"y": 187,
-						"w": 30,
-						"h": 8
+						"x": 24,
+						"y": 237,
+						"w": 29,
+						"h": 31
 					}
 				},
 				{
@@ -1536,14 +2124,35 @@
 						"h": 30
 					},
 					"frame": {
-						"x": 87,
-						"y": 195,
+						"x": 53,
+						"y": 234,
 						"w": 19,
 						"h": 30
 					}
 				},
 				{
-					"filename": "standup-5.png",
+					"filename": "crouch-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 15,
+						"w": 12,
+						"h": 30
+					},
+					"frame": {
+						"x": 72,
+						"y": 234,
+						"w": 12,
+						"h": 30
+					}
+				},
+				{
+					"filename": "standup-3.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -1552,19 +2161,19 @@
 					},
 					"spriteSourceSize": {
 						"x": 1,
-						"y": 31,
-						"w": 29,
-						"h": 14
+						"y": 37,
+						"w": 30,
+						"h": 8
 					},
 					"frame": {
-						"x": 106,
-						"y": 212,
-						"w": 29,
-						"h": 14
+						"x": 226,
+						"y": 208,
+						"w": 30,
+						"h": 8
 					}
 				},
 				{
-					"filename": "standup-12.png",
+					"filename": "standjump-10.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -1572,16 +2181,37 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 6,
-						"y": 16,
-						"w": 15,
+						"x": 1,
+						"y": 12,
+						"w": 30,
 						"h": 29
 					},
 					"frame": {
-						"x": 135,
-						"y": 195,
-						"w": 15,
+						"x": 84,
+						"y": 228,
+						"w": 30,
 						"h": 29
+					}
+				},
+				{
+					"filename": "standjump-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 15,
+						"w": 16,
+						"h": 30
+					},
+					"frame": {
+						"x": 202,
+						"y": 212,
+						"w": 16,
+						"h": 30
 					}
 				},
 				{
@@ -1599,31 +2229,10 @@
 						"h": 7
 					},
 					"frame": {
-						"x": 106,
-						"y": 195,
+						"x": 171,
+						"y": 221,
 						"w": 29,
 						"h": 7
-					}
-				},
-				{
-					"filename": "standup-4.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 32,
-						"h": 48
-					},
-					"spriteSourceSize": {
-						"x": 1,
-						"y": 34,
-						"w": 29,
-						"h": 11
-					},
-					"frame": {
-						"x": 150,
-						"y": 212,
-						"w": 29,
-						"h": 11
 					}
 				},
 				{
@@ -1641,10 +2250,241 @@
 						"h": 7
 					},
 					"frame": {
-						"x": 106,
-						"y": 202,
+						"x": 84,
+						"y": 257,
 						"w": 29,
 						"h": 7
+					}
+				},
+				{
+					"filename": "jumpupland-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 16,
+						"w": 12,
+						"h": 29
+					},
+					"frame": {
+						"x": 114,
+						"y": 228,
+						"w": 12,
+						"h": 29
+					}
+				},
+				{
+					"filename": "standjump-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 16,
+						"w": 14,
+						"h": 29
+					},
+					"frame": {
+						"x": 126,
+						"y": 228,
+						"w": 14,
+						"h": 29
+					}
+				},
+				{
+					"filename": "standjump-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 16,
+						"w": 16,
+						"h": 29
+					},
+					"frame": {
+						"x": 140,
+						"y": 228,
+						"w": 16,
+						"h": 29
+					}
+				},
+				{
+					"filename": "standjump-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 15,
+						"w": 24,
+						"h": 29
+					},
+					"frame": {
+						"x": 156,
+						"y": 228,
+						"w": 24,
+						"h": 29
+					}
+				},
+				{
+					"filename": "jumpupland-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 16,
+						"w": 12,
+						"h": 29
+					},
+					"frame": {
+						"x": 180,
+						"y": 228,
+						"w": 12,
+						"h": 29
+					}
+				},
+				{
+					"filename": "jumpup-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 16,
+						"w": 15,
+						"h": 29
+					},
+					"frame": {
+						"x": 218,
+						"y": 216,
+						"w": 15,
+						"h": 29
+					}
+				},
+				{
+					"filename": "standup-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 16,
+						"w": 15,
+						"h": 29
+					},
+					"frame": {
+						"x": 233,
+						"y": 216,
+						"w": 15,
+						"h": 29
+					}
+				},
+				{
+					"filename": "standup-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 34,
+						"w": 29,
+						"h": 11
+					},
+					"frame": {
+						"x": 113,
+						"y": 257,
+						"w": 29,
+						"h": 11
+					}
+				},
+				{
+					"filename": "jumpup-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 16,
+						"w": 16,
+						"h": 29
+					},
+					"frame": {
+						"x": 258,
+						"y": 0,
+						"w": 16,
+						"h": 29
+					}
+				},
+				{
+					"filename": "standup-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 31,
+						"w": 29,
+						"h": 14
+					},
+					"frame": {
+						"x": 231,
+						"y": 158,
+						"w": 29,
+						"h": 14
+					}
+				},
+				{
+					"filename": "standjump-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 17,
+						"w": 15,
+						"h": 28
+					},
+					"frame": {
+						"x": 258,
+						"y": 29,
+						"w": 15,
+						"h": 28
 					}
 				},
 				{
@@ -1662,10 +2502,31 @@
 						"h": 7
 					},
 					"frame": {
-						"x": 206,
-						"y": 0,
+						"x": 142,
+						"y": 257,
 						"w": 28,
 						"h": 7
+					}
+				},
+				{
+					"filename": "jumpup-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 18,
+						"w": 15,
+						"h": 27
+					},
+					"frame": {
+						"x": 257,
+						"y": 57,
+						"w": 15,
+						"h": 27
 					}
 				},
 				{
@@ -1683,10 +2544,199 @@
 						"h": 14
 					},
 					"frame": {
-						"x": 179,
-						"y": 212,
+						"x": 192,
+						"y": 245,
 						"w": 27,
 						"h": 14
+					}
+				},
+				{
+					"filename": "jumpupland-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 18,
+						"w": 12,
+						"h": 27
+					},
+					"frame": {
+						"x": 223,
+						"y": 100,
+						"w": 12,
+						"h": 27
+					}
+				},
+				{
+					"filename": "jumpup-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 18,
+						"w": 11,
+						"h": 27
+					},
+					"frame": {
+						"x": 260,
+						"y": 84,
+						"w": 11,
+						"h": 27
+					}
+				},
+				{
+					"filename": "jumpupland-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 18,
+						"w": 14,
+						"h": 27
+					},
+					"frame": {
+						"x": 260,
+						"y": 111,
+						"w": 14,
+						"h": 27
+					}
+				},
+				{
+					"filename": "standjump-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 19,
+						"w": 14,
+						"h": 26
+					},
+					"frame": {
+						"x": 260,
+						"y": 138,
+						"w": 14,
+						"h": 26
+					}
+				},
+				{
+					"filename": "jumpupland-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 20,
+						"w": 13,
+						"h": 25
+					},
+					"frame": {
+						"x": 260,
+						"y": 164,
+						"w": 13,
+						"h": 25
+					}
+				},
+				{
+					"filename": "standjump-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 20,
+						"w": 16,
+						"h": 25
+					},
+					"frame": {
+						"x": 256,
+						"y": 189,
+						"w": 16,
+						"h": 25
+					}
+				},
+				{
+					"filename": "standjump-16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 20,
+						"w": 13,
+						"h": 25
+					},
+					"frame": {
+						"x": 256,
+						"y": 214,
+						"w": 13,
+						"h": 25
+					}
+				},
+				{
+					"filename": "jumpup-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 20,
+						"w": 13,
+						"h": 25
+					},
+					"frame": {
+						"x": 248,
+						"y": 239,
+						"w": 13,
+						"h": 25
+					}
+				},
+				{
+					"filename": "crouch-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 20,
+						"w": 12,
+						"h": 25
+					},
+					"frame": {
+						"x": 261,
+						"y": 239,
+						"w": 12,
+						"h": 25
 					}
 				},
 				{
@@ -1704,10 +2754,31 @@
 						"h": 24
 					},
 					"frame": {
-						"x": 206,
-						"y": 7,
+						"x": 0,
+						"y": 268,
 						"w": 19,
 						"h": 24
+					}
+				},
+				{
+					"filename": "standup-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 27,
+						"w": 24,
+						"h": 18
+					},
+					"frame": {
+						"x": 219,
+						"y": 245,
+						"w": 24,
+						"h": 18
 					}
 				},
 				{
@@ -1725,8 +2796,8 @@
 						"h": 18
 					},
 					"frame": {
-						"x": 206,
-						"y": 31,
+						"x": 19,
+						"y": 268,
 						"w": 24,
 						"h": 18
 					}
@@ -1746,14 +2817,14 @@
 						"h": 17
 					},
 					"frame": {
-						"x": 206,
-						"y": 49,
+						"x": 43,
+						"y": 268,
 						"w": 24,
 						"h": 17
 					}
 				},
 				{
-					"filename": "standup-8.png",
+					"filename": "jumpup-11.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -1761,16 +2832,58 @@
 						"h": 48
 					},
 					"spriteSourceSize": {
-						"x": 3,
-						"y": 27,
-						"w": 24,
-						"h": 18
+						"x": 8,
+						"y": 21,
+						"w": 13,
+						"h": 24
 					},
 					"frame": {
-						"x": 206,
-						"y": 66,
-						"w": 24,
-						"h": 18
+						"x": 67,
+						"y": 268,
+						"w": 13,
+						"h": 24
+					}
+				},
+				{
+					"filename": "jumpup-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 22,
+						"w": 15,
+						"h": 23
+					},
+					"frame": {
+						"x": 80,
+						"y": 268,
+						"w": 15,
+						"h": 23
+					}
+				},
+				{
+					"filename": "jumpup-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 23,
+						"w": 18,
+						"h": 22
+					},
+					"frame": {
+						"x": 95,
+						"y": 264,
+						"w": 18,
+						"h": 22
 					}
 				},
 				{
@@ -1788,10 +2901,199 @@
 						"h": 18
 					},
 					"frame": {
-						"x": 206,
-						"y": 84,
+						"x": 170,
+						"y": 257,
 						"w": 22,
 						"h": 18
+					}
+				},
+				{
+					"filename": "crouch-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 24,
+						"w": 12,
+						"h": 21
+					},
+					"frame": {
+						"x": 113,
+						"y": 268,
+						"w": 12,
+						"h": 21
+					}
+				},
+				{
+					"filename": "crouch-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 26,
+						"w": 12,
+						"h": 19
+					},
+					"frame": {
+						"x": 125,
+						"y": 268,
+						"w": 12,
+						"h": 19
+					}
+				},
+				{
+					"filename": "rise-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 6,
+						"w": 6,
+						"h": 39
+					},
+					"frame": {
+						"x": 19,
+						"y": 45,
+						"w": 6,
+						"h": 39
+					}
+				},
+				{
+					"filename": "rise-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 7,
+						"w": 10,
+						"h": 38
+					},
+					"frame": {
+						"x": 122,
+						"y": 115,
+						"w": 10,
+						"h": 38
+					}
+				},
+				{
+					"filename": "rise-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 9,
+						"w": 12,
+						"h": 36
+					},
+					"frame": {
+						"x": 178,
+						"y": 75,
+						"w": 12,
+						"h": 36
+					}
+				},
+				{
+					"filename": "rise-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 15,
+						"w": 12,
+						"h": 30
+					},
+					"frame": {
+						"x": 72,
+						"y": 234,
+						"w": 12,
+						"h": 30
+					}
+				},
+				{
+					"filename": "rise-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 20,
+						"w": 12,
+						"h": 25
+					},
+					"frame": {
+						"x": 261,
+						"y": 239,
+						"w": 12,
+						"h": 25
+					}
+				},
+				{
+					"filename": "rise-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 24,
+						"w": 12,
+						"h": 21
+					},
+					"frame": {
+						"x": 113,
+						"y": 268,
+						"w": 12,
+						"h": 21
+					}
+				},
+				{
+					"filename": "rise-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 26,
+						"w": 12,
+						"h": 19
+					},
+					"frame": {
+						"x": 125,
+						"y": 268,
+						"w": 12,
+						"h": 19
 					}
 				}
 			]

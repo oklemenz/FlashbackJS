@@ -11,12 +11,15 @@
     "/Users/d045365/Documents/private/FlashbackJS/resources/animations/03_walk1",
     "/Users/d045365/Documents/private/FlashbackJS/resources/animations/04_walk2",
     "/Users/d045365/Documents/private/FlashbackJS/resources/animations/05_startrun",
-    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/06_runstop",
-    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/07_run1",
-    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/08_run2",
-    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/09_run3",
-    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/10_run4",
-    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/11_preparestop"
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/06_preparestop",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/07_runstop",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/08_run1",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/09_run2",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/10_run3",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/11_run4",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/12_crouch",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/13_rise",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/14_jumpup"
   ],
   "packOptions": {
     "textureName": "conrad",
