@@ -29,7 +29,7 @@ let conrad;
 function create() {
   setup(this);
   this.add.sprite(0, 0, "background").setOrigin(0, 0);
-  conrad = new Conrad(this, { x: 48, y: 32 }, { x: 8, y: 43 }, keys).setOrigin(0.5, 1);
+  conrad = new Conrad(this, { x: 0, y: 32 }, keys, true).setOrigin(0.5, 1); // 48
   this.add.existing(conrad);
 }
 

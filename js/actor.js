@@ -1,6 +1,6 @@
 export default class Actor extends Phaser.GameObjects.Sprite {
 
-  constructor(scene, position, offset, actions, keys) {
+  constructor(scene, position, offset, actions, keys, turn, log) {
     super(scene, position.x + offset.x, position.y + offset.y);
     this.position = position;
     this.offset = offset;
@@ -17,12 +17,19 @@ export default class Actor extends Phaser.GameObjects.Sprite {
     });
     this.keys = keys;
     this.env = {
-      atEdgeAbove: false, atEdgeBelow: false, atWall: false, atObject: false,
+      atEdgeAbove: false,
+      atEdgeBelow: false,
+      atWall: false,
+      atObject: false,
     };
     this.input = {};
     this.state = null;
     this.action = null;
     this._bind();
+    if (turn) {
+      this._turn();
+    }
+    this.log = log;
   }
 
   update() {
@@ -54,8 +61,12 @@ export default class Actor extends Phaser.GameObjects.Sprite {
     });
   }
 
-  _isFacing(direction) {
+  _isFacingDirection(direction) {
     return (direction.includes("left") && this.isFacingLeft()) || (direction.includes("right") && this.isFacingRight());
+  }
+
+  _isNotFaceDirection(direction) {
+    return !(direction.includes("left") || direction.includes("right"));
   }
 
   _bind() {
@@ -76,7 +87,7 @@ export default class Actor extends Phaser.GameObjects.Sprite {
         this._turn();
       }
       if (this.action.align !== false) {
-        this._align();
+        this._align(animation, frame);
       }
       if (this.action.stop === true) {
         return;
@@ -105,14 +116,12 @@ export default class Actor extends Phaser.GameObjects.Sprite {
         for (const input of action.input || []) {
           const values = input.split("+");
           const allSet = values.every((value) => {
-            return (!String(value).startsWith("!") && this.input[value]) ||
-              (String(value).startsWith("!") && !this.input[value]);
+            return ((!String(value).startsWith("!") && this.input[value]) || (String(value).startsWith("!") && !this.input[value])) &&
+              (this._isNotFaceDirection(value) || !!action.turn !== this._isFacingDirection(value));
           });
           if (allSet) {
-            if (!action.turn || !this._isFacing(input)) {
-              this.perform(name);
-              return true;
-            }
+            this.perform(name);
+            return true;
           }
         }
       }
@@ -177,23 +186,22 @@ export default class Actor extends Phaser.GameObjects.Sprite {
   _position() {
     this.x = Math.round(this.position.x + this.offset.x);
     this.y = Math.round(this.position.y + this.offset.y);
-    if (this.action.log) {
-      console.log(this.action.key, index, this.position.x, this.position.y, x, y);
+    if (this.log || this.action.log) {
+      console.log(this.anims.currentAnim?.key, this.anims.currentFrame?.index, this.x, this.y);
     }
   }
 
-  _align() {
-    this.position.x = Math.floor(Math.round(this.position.x) / 8) * 8;
-    this.position.y = Math.floor((Math.round(this.position.y) - 32) / 72) * 72 + 32; // 32, 104, 176
+  _align(animation, frame) {
+    this.position.x = Math.round(Math.round(this.position.x) / 16) * 16;
+    this.position.y = Math.round((Math.round(this.position.y) - 32) / 72) * 72 + 32; // 32, 104, 176
     const previous = { x: this.x, y: this.y };
     this.x = this.position.x + this.offset.x;
     this.y = this.position.y + this.offset.y;
-    const index = this.anims.currentFrame.index;
     if (previous.x !== this.x) {
-      console.log("misaligned-x", this.action.key, index, this.x, previous.x);
+      console.log("misaligned-x", animation.key, frame.index, previous.x, this.x);
     }
     if (previous.y !== this.y) {
-      console.log("misaligned-y", this.action.key, index, this.y, previous.y);
+      console.log("misaligned-y", animation.key, frame.index, previous.y, this.y);
     }
   }
 

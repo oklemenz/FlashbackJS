@@ -19,7 +19,9 @@
     "/Users/d045365/Documents/private/FlashbackJS/resources/animations/11_run4",
     "/Users/d045365/Documents/private/FlashbackJS/resources/animations/12_crouch",
     "/Users/d045365/Documents/private/FlashbackJS/resources/animations/13_rise",
-    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/14_jumpup"
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/14_jumpup",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/15_jumpupland",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/16_standjump"
   ],
   "packOptions": {
     "textureName": "conrad",
