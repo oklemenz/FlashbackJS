@@ -52,9 +52,9 @@ export default class Actor extends Phaser.GameObjects.Sprite {
       if (this.action) {
         return resolve();
       }
-      this.action = this.actions[action];
-      this._offset(this.action);
+      this._transition(this.state, action);
       this.state = action;
+      this.action = this.actions[action];
       this.play(action).once("animationcomplete", () => {
         resolve();
       });
@@ -173,12 +173,24 @@ export default class Actor extends Phaser.GameObjects.Sprite {
     }
   }
 
-  _offset() {
-    if (this.action.ox && this.action.ox[this.state]) {
-      this.position.x += this.action.ox[this.state];
+  _transition(outState, inState) {
+    const outStateAction = this.actions[outState];
+    if (outStateAction) {
+      if (outStateAction.ox) {
+        this.position.x += outStateAction.ox * (this.isFacingLeft() ? -1 : 1);
+      }
+      if (outStateAction.oy) {
+        this.position.y += outStateAction.oy;
+      }
     }
-    if (this.action.oy && this.action.oy[this.state]) {
-      this.position.y += this.action.oy[this.state];
+    const inStateAction = this.actions[inState];
+    if (inStateAction) {
+      if (inStateAction.ix) {
+        this.position.x += outStateAction.ix * (this.isFacingLeft() ? -1 : 1);
+      }
+      if (inStateAction.oy) {
+        this.position.y += inStateAction.iy;
+      }
     }
     this._position();
   }
@@ -186,7 +198,7 @@ export default class Actor extends Phaser.GameObjects.Sprite {
   _position() {
     this.x = Math.round(this.position.x + this.offset.x);
     this.y = Math.round(this.position.y + this.offset.y);
-    if (this.log || this.action.log) {
+    if (this.log || this.action?.log) {
       console.log(this.anims.currentAnim?.key, this.anims.currentFrame?.index, this.x, this.y);
     }
   }
@@ -198,10 +210,10 @@ export default class Actor extends Phaser.GameObjects.Sprite {
     this.x = this.position.x + this.offset.x;
     this.y = this.position.y + this.offset.y;
     if (previous.x !== this.x) {
-      console.log("misaligned-x", animation.key, frame.index, previous.x, this.x);
+      console.log("=> misaligned-x", animation.key, frame.index, previous.x, this.x);
     }
     if (previous.y !== this.y) {
-      console.log("misaligned-y", animation.key, frame.index, previous.y, this.y);
+      console.log("=> misaligned-y", animation.key, frame.index, previous.y, this.y);
     }
   }
 

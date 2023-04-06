@@ -21,9 +21,9 @@ const Actions = {
   jumpup: { size: 18, rate: 15, previous: ["stand"], next: "jumpupland", input: ["up"], py: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -5, -5, -5, -5, -5], align: false },
   jumpupland: { size: 10, rate: 15, previous: ["stand"], next: "stand", py: [10, 10, 5, 0, 0, 0, 0, 0, 0, 0, 0] },
   standjump: { size: 20, rate: 20, previous: ["stand"], next: "stand", input: ["up+fire", "up+fire"], x: 8, px: [1, 0, 1, 1, 1, 1, 4, 3, 7, 9, 9, 9, 3, 5, 2, 4, 0, 2, 1, 1] },
-  // runjump: { size: 19, rate: 25, previous: ["run1", "run2", "run3", "run4"], next: "jumpland", input: ["up+left", "up+right"], x: 12, align: false, px: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
-  // jumpland: { size: 19, rate: 25, previous: ["runjump"], next: "stand", input: ["left", "right"], x: 1,
-  // jumplandrun: { size: 9, rate: 25, previous: ["runjump"], next: "run1", input: ["left+fire", "right+fire"], x: 1,
+  runjump: { size: 19, rate: 25, previous: ["run1", "run2", "run3", "run4"], next: "jumpland", input: ["up+left", "up+right"], x: 12, px: [7, 1, 6, 9, 6, 4, 2, 3, 4, 6, 5, 5, 5, 4, 4, 8, 10, 3, 4], py: [0, 0, 0, 0, -1, -4, -3, -2, -2, -1, -1, 1, 1, 2, 2, 3, 4, 1, 0], align: false },
+  jumpland: { size: 5, rate: 25, previous: ["runjump"], next: "stand", x: 1, px: [7, 0, 2, 0, 2] },
+  jumplandrun: { size: 9, rate: 25, previous: ["runjump"], next: "run4", input: ["left", "right"], x: 1, px: [11, 0, 0, 0, 6, 2, 2, 2, 4], ox: 5 },
 
   // standaim - stand
   // standdrawn - standaim
