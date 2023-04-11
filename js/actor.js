@@ -72,12 +72,14 @@ export default class Actor extends Phaser.GameObjects.Sprite {
   _bind() {
     this.on("animationstart", (animation, frame) => {
       this._move(animation.key, frame.index);
+      this._callback(animation, frame);
       if (this.action.stop === frame.index) {
         this.anims.stop();
       }
     });
     this.on("animationupdate", (animation, frame) => {
       this._move(animation.key, frame.index);
+      this._callback(animation, frame);
       if (this.action.stop === frame.index) {
         this.anims.stop();
       }
@@ -173,23 +175,46 @@ export default class Actor extends Phaser.GameObjects.Sprite {
     }
   }
 
+  _callback(animation, frame) {
+    const callback = animation.key.replace(/[^a-z]/gi, "");
+    if (typeof this[callback] === "function") {
+      this[callback](animation, frame);
+    }
+  }
+
   _transition(outState, inState) {
     const outStateAction = this.actions[outState];
     if (outStateAction) {
-      if (outStateAction.ox) {
+      if (!isNaN(outStateAction.ox)) {
         this.position.x += outStateAction.ox * (this.isFacingLeft() ? -1 : 1);
       }
-      if (outStateAction.oy) {
+      if (!isNaN(outStateAction.oy)) {
         this.position.y += outStateAction.oy;
+      }
+      if (outStateAction[inState]) {
+        if (!isNaN(outStateAction[inState].ox)) {
+          this.position.x += outStateAction[inState].ox * (this.isFacingLeft() ? -1 : 1);
+        }
+        if (!isNaN(outStateAction[inState].oy)) {
+          this.position.y += outStateAction[inState].oy;
+        }
       }
     }
     const inStateAction = this.actions[inState];
     if (inStateAction) {
-      if (inStateAction.ix) {
+      if (!isNaN(inStateAction.ix)) {
         this.position.x += outStateAction.ix * (this.isFacingLeft() ? -1 : 1);
       }
-      if (inStateAction.oy) {
+      if (!isNaN(inStateAction.iy)) {
         this.position.y += inStateAction.iy;
+      }
+      if (inStateAction[outState]) {
+        if (!isNaN(inStateAction[outState].ix)) {
+          this.position.x += inStateAction[outState].ix * (this.isFacingLeft() ? -1 : 1);
+        }
+        if (!isNaN(inStateAction[outState].iy)) {
+          this.position.y += inStateAction[outState].iy;
+        }
       }
     }
     this._position();

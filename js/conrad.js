@@ -1,9 +1,9 @@
 import Actor from "./actor.js";
 
-// 1 unit = 8 px, align 2 units = 16 px
+// grid 1 unit (8 px) - align 2 units (16 px)
 const Actions = {
   standup: { size: 15, rate: 15, next: "stand" },
-  stand: { size: 1, rate: 15 },
+  stand: { size: 1 },
   turn: { size: 10, rate: 15, turn: true, previous: ["stand"], next: "stand", input: ["left", "right"] },
   startrun: { size: 12, rate: 20, previous: ["stand", "walk1", "walk2"], next: "preparestop", input: ["left+fire", "right+fire"], x: 2, px: [0, 0, 0, 4, 1, 3, 1, 1, 3, 1, 4, 3], align: false },
   run1: { size: 5, rate: 25, previous: ["run4"], next: "preparestop", input: ["left+fire", "right+fire"], x: 2, align: false },
@@ -24,28 +24,44 @@ const Actions = {
   runjump: { size: 19, rate: 25, previous: ["run1", "run2", "run3", "run4"], next: "jumpland", input: ["up+left", "up+right"], x: 12, px: [7, 1, 6, 9, 6, 4, 2, 3, 4, 6, 5, 5, 5, 4, 4, 8, 10, 3, 4], py: [0, 0, 0, 0, -1, -4, -3, -2, -2, -1, -1, 1, 1, 2, 2, 3, 4, 1, 0], align: false },
   jumpland: { size: 5, rate: 25, previous: ["runjump"], next: "stand", x: 1, px: [7, 0, 2, 0, 2] },
   jumplandrun: { size: 9, rate: 25, previous: ["runjump"], next: "run4", input: ["left", "right"], x: 1, px: [11, 0, 0, 0, 6, 2, 2, 2, 4], ox: 5 },
-
-  // standaim - stand
-  // standdrawn - standaim
-  // turndrawn - standdrawn (turn)
-  // turnaim - standaim (turn)
-  // walkdrawn - standdrawn
-  // crouchaim - standaim
-  // crouchdrawn - standdrawn
-  // crouchaimturn - crouchaim (turn)
-  // crouchdrawnturn - crouchdrawn (turn)
-  // riseaim - crouchaim
-  // risedrawn - crouchdrawn
-  // roll, rollstart, rollend - crouchdrown - crouchaim
-  // standshoot - standaim
-  // crouchshoot - crouchaim
-  // runroll - run
+  aim: { size: 1 },
+  drawn: { size: 1 },
+  standaim: { size: 13, rate: 20, previous: ["stand"], next: "aim", input: ["draw"] },
+  aimstand: { size: 13, rate: 20, previous: ["aim"], next: "stand", input: ["draw"] },
+  aimdrawn: { size: 16, rate: 20, previous: ["aim"], next: "drawn", input: ["left", "right"] },
+  drawnaim: { size: 16, rate: 20, previous: ["drawn"], next: "aim", input: ["fire"] },
+  drawnstand: { size: 16, rate: 20, previous: ["drawn"], next: "stand", input: ["draw"] },
+  aimturn: { size: 11, rate: 20, turn: true, previous: ["aim"], next: "aim", input: ["left", "right"] },
+  drawnturn: { size: 10, rate: 20, turn: true, previous: ["drawn"], next: "drawn", input: ["left", "right"] },
+  walkdrawn: { size: 14, rate: 20, previous: ["drawn"], next: "drawn", input: ["left", "right"], x: 2 },
+  // aimlow: { size: 1 },
+  // drawnlow: { size: 1 },
+  // aimcrouch
+  // crouchaim
+  // drawncrouch
+  // crouchdrawn
+  // aimcrouchturn
+  // drawncrouchturn
+  // crouchroll
+  // crouchdrawnroll
+  // runroll
+  // standfire
+  // crouchfire
+  // activate
 };
 
 export default class Conrad extends Actor {
   constructor(scene, position, input, turn, log) {
     super(scene, position, { x: 8, y: 43 }, Actions, input, turn, log);
     this.perform("standup");
+  }
+
+  standfire() {
+    // Add fire
+  }
+
+  crouchfire() {
+    // Add fire
   }
 }
 

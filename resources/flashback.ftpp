@@ -21,7 +21,14 @@
     "/Users/d045365/Documents/private/FlashbackJS/resources/animations/13_rise",
     "/Users/d045365/Documents/private/FlashbackJS/resources/animations/14_jumpup",
     "/Users/d045365/Documents/private/FlashbackJS/resources/animations/15_jumpupland",
-    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/16_standjump"
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/16_standjump",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/17_runwalk",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/18_runturn",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/19_runjump",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/20_jumpland",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/21_jumplandrun",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/22_aim",
+    "/Users/d045365/Documents/private/FlashbackJS/resources/animations/23_drawn"
   ],
   "packOptions": {
     "textureName": "conrad",

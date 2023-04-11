@@ -53,7 +53,7 @@ function createAnimations(scene) {
     const action = Conrad.Actions[key];
     scene.anims.create({
       key,
-      frameRate: action.rate,
+      frameRate: action.rate || 20,
       frames: scene.anims.generateFrameNames("conrad", {
         start: 0, end: (action.size || 1) - 1,
         prefix: `${ key }-`, suffix: ".png",
