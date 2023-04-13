@@ -1,10 +1,12 @@
-export default class Actor extends Phaser.GameObjects.Sprite {
+export default class Actor extends Phaser.GameObjects.Container {
 
-  constructor(scene, position, offset, actions, keys, turn, log) {
+  constructor(scene, atlas, position, offset, actions, keys, turn, log) {
     super(scene, position.x + offset.x, position.y + offset.y);
+    this.atlas = atlas;
     this.position = position;
     this.offset = offset;
     this.actions = actions;
+    this._createAnimations(scene);
     for (const key in this.actions) {
       this.actions[key].key = key;
     }
@@ -15,7 +17,7 @@ export default class Actor extends Phaser.GameObjects.Sprite {
         return value.split("+").length;
       }));
     });
-    this.keys = keys;
+    this.keys = this._bindKeys(scene, keys);
     this.env = {
       atEdgeAbove: false,
       atEdgeBelow: false,
@@ -25,11 +27,14 @@ export default class Actor extends Phaser.GameObjects.Sprite {
     this.input = {};
     this.state = null;
     this.action = null;
+    this.log = log;
+    this.body = scene.add.sprite(0, 0, atlas);
+    this.body.setOrigin(0.5, 1);
+    this.add(this.body);
     this._bind();
     if (turn) {
       this._turn();
     }
-    this.log = log;
   }
 
   update() {
@@ -55,7 +60,7 @@ export default class Actor extends Phaser.GameObjects.Sprite {
       this._transition(this.state, action);
       this.state = action;
       this.action = this.actions[action];
-      this.play(action).once("animationcomplete", () => {
+      this.body.play(action).once("animationcomplete", () => {
         resolve();
       });
     });
@@ -70,21 +75,21 @@ export default class Actor extends Phaser.GameObjects.Sprite {
   }
 
   _bind() {
-    this.on("animationstart", (animation, frame) => {
+    this.body.on("animationstart", (animation, frame) => {
       this._move(animation.key, frame.index);
       this._callback(animation, frame);
       if (this.action.stop === frame.index) {
-        this.anims.stop();
+        this.body.anims.stop();
       }
     });
-    this.on("animationupdate", (animation, frame) => {
+    this.body.on("animationupdate", (animation, frame) => {
       this._move(animation.key, frame.index);
       this._callback(animation, frame);
       if (this.action.stop === frame.index) {
-        this.anims.stop();
+        this.body.anims.stop();
       }
     });
-    this.on("animationcomplete", (animation, frame) => {
+    this.body.on("animationcomplete", (animation, frame) => {
       if (this.action.turn) {
         this._turn();
       }
@@ -118,7 +123,7 @@ export default class Actor extends Phaser.GameObjects.Sprite {
         for (const input of action.input || []) {
           const values = input.split("+");
           const allSet = values.every((value) => {
-            return ((!String(value).startsWith("!") && this.input[value]) || (String(value).startsWith("!") && !this.input[value])) &&
+            return ((!String(value).startsWith("!") && this.input[value]) || (String(value).startsWith("!") && !this.input[value.substring(1)])) &&
               (this._isNotFaceDirection(value) || !!action.turn !== this._isFacingDirection(value));
           });
           if (allSet) {
@@ -203,7 +208,7 @@ export default class Actor extends Phaser.GameObjects.Sprite {
     const inStateAction = this.actions[inState];
     if (inStateAction) {
       if (!isNaN(inStateAction.ix)) {
-        this.position.x += outStateAction.ix * (this.isFacingLeft() ? -1 : 1);
+        this.position.x += inStateAction.ix * (this.isFacingLeft() ? -1 : 1);
       }
       if (!isNaN(inStateAction.iy)) {
         this.position.y += inStateAction.iy;
@@ -224,11 +229,13 @@ export default class Actor extends Phaser.GameObjects.Sprite {
     this.x = Math.round(this.position.x + this.offset.x);
     this.y = Math.round(this.position.y + this.offset.y);
     if (this.log || this.action?.log) {
-      console.log(this.anims.currentAnim?.key, this.anims.currentFrame?.index, this.x, this.y);
+      console.log(this.body.anims.currentAnim?.key, this.body.anims.currentFrame?.index, this.x, this.y);
     }
   }
 
   _align(animation, frame) {
+    // grid: 1 unit (8 px)
+    // align: 2 units (16 px)
     this.position.x = Math.round(Math.round(this.position.x) / 16) * 16;
     this.position.y = Math.round((Math.round(this.position.y) - 32) / 72) * 72 + 32; // 32, 104, 176
     const previous = { x: this.x, y: this.y };
@@ -244,5 +251,27 @@ export default class Actor extends Phaser.GameObjects.Sprite {
 
   _turn() {
     this.scaleX *= -1;
+  }
+
+  _createAnimations(scene) {
+    for (const key in this.actions) {
+      const action = this.actions[key];
+      scene.anims.create({
+        key,
+        frameRate: action.rate || 20,
+        frames: scene.anims.generateFrameNames(this.atlas, {
+          start: 0, end: (action.size || 1) - 1,
+          prefix: `${ key }-`, suffix: ".png",
+        })
+      });
+    }
+  }
+
+  _bindKeys(scene, keys) {
+    const _keys = {};
+    for (const key in keys) {
+      _keys[key] = scene.input.keyboard.addKey(keys[key]);
+    }
+    return _keys;
   }
 }

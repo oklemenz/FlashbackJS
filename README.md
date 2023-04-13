@@ -1,18 +1,37 @@
 # FlashbackJS
 
-Conrad's animation in Flashback
+Conrad's animations in Flashback executed by a [state engine (actor.js)](actor.js) and configured via [JSON (conrad.js)](./js/conrad.js):
+
+**Animation:**
+- `<name>`: _[String]_ Name of the animation 
+- `size`: _[Number]_ Number of animation frames
+- `rate`: _[Number]_ Frame rate of the animation (default 20)
+- `previous`: _[Array<String>]_ Previous animations
+- `next`: _[String]_ Next default animation (if no other animation played before with input)
+- `input`: _[String]_ Input to trigger animation (`keys, env`), input combo with `+`, input negation with `!`
+- `x`: _[Number]_ Number of grid units shifted in `x` direction for whole animation
+- `y`: _[Number]_ Number of grid units shifted in `y` direction for whole animation
+- `px`: _[Array<Number>]_ Number of pixels shifted in `x` direction for a single animation frame (overrides `x`)
+- `py`: _[Array<Number>]_ Number of pixels shifted in `y` direction for a single animation frame (overrides `y`)
+- `ox`: _[Number | Object<String, Number>]_ Number of pixels shifted in `x` direction at the end (out) of animation. Can depend on succeeding animation, e.g. `{ "<name>": 1 }`   
+- `oy`: _[Number | Object<String, Number>]_ Number of pixels shifted in `y` direction at the end (out) of animation. Can depend on succeeding animation, e.g. `{ "<name>": 1 }`
+- `ix`: _[Number | Object<String, Number>]_ Number of pixels shifted in `x` direction at the start (in) of animation. Can depend on preceding animation, e.g. `{ "<name>": 1 }`
+- `iy`: _[Number | Object<String, Number>]_ Number of pixels shifted in `y` direction at the start (in) of animation. Can depend on preceding animation, e.g. `{ "<name>": 1 }`
+- `align`: _[Boolean]_ Align to grid after animation (2 grid units)
+- `stop`: _[Boolean | Number]_ Stop animation at frame index (`Number`) or at animation end (`true`)
+- `log`: _[Boolean]_ Log animation to console
 
 ## Play GitHub Version
 
 - Browser: https://oklemenz.github.io/FlashbackJS
 - Keyboard
   - `Cursor keys`: Movement
-    - `Left / Right key`: Walk, Run, Roll
+    - `Left / Right key`: Walk, Run, Step, Roll
     - `Up key`: Jump
     - `Down key`: Crouch
   - `SHIFT`: Run, Fire
   - `SPACE`: Draw Gun
-  - `ENTER`: Åction
+  - `ENTER`: Action
 
 ## Play Locally
 
