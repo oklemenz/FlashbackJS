@@ -1,11 +1,11 @@
 export default class Actor extends Phaser.GameObjects.Container {
 
-  constructor(scene, atlas, position, offset, actions, keys, turn, log) {
+  constructor(scene, name, position, offset, keys, turn, log) {
     super(scene, position.x + offset.x, position.y + offset.y);
-    this.atlas = atlas;
+    this.name = name;
     this.position = position;
     this.offset = offset;
-    this.actions = actions;
+    this.actions = scene.cache.json.get(name + "-anim");
     this._createAnimations(scene);
     for (const key in this.actions) {
       this.actions[key].key = key;
@@ -28,7 +28,7 @@ export default class Actor extends Phaser.GameObjects.Container {
     this.state = null;
     this.action = null;
     this.log = log;
-    this.body = scene.add.sprite(0, 0, atlas);
+    this.body = scene.add.sprite(0, 0, name);
     this.body.setOrigin(0.5, 1);
     this.add(this.body);
     this._bind();
@@ -259,7 +259,7 @@ export default class Actor extends Phaser.GameObjects.Container {
       scene.anims.create({
         key,
         frameRate: action.rate || 20,
-        frames: scene.anims.generateFrameNames(this.atlas, {
+        frames: scene.anims.generateFrameNames(this.name, {
           start: 0, end: (action.size || 1) - 1,
           prefix: `${ key }-`, suffix: ".png",
         })

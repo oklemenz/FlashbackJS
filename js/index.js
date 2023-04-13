@@ -11,7 +11,6 @@ const KEYS = {
 };
 
 let conrad;
-
 new Phaser.Game({
   type: Phaser.AUTO,
   parent: "game",
@@ -20,6 +19,7 @@ new Phaser.Game({
   scene: {
     preload: function () {
       this.load.path = "assets/";
+      this.load.json("conrad-anim", "anim/conrad.json");
       this.load.multiatlas("conrad", "conrad.json");
       this.load.image("background", "background.png");
       this.load.image("fire", "fire.png");

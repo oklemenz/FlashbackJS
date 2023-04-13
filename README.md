@@ -1,6 +1,6 @@
 # FlashbackJS
 
-Conrad's animations in Flashback executed by a [state engine (actor.js)](./js/actor.js) and configured via [JSON (conrad.json)](./js/conrad.json):
+Conrad's animations in Flashback executed by a [state engine (actor.js)](./js/actor.js) and configured via [JSON (conrad.json)](./assets/anim/conrad.json):
 
 **Animation Configuration:**
 - `<nme>` _[String]_ : Name of the animation 
