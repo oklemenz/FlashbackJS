@@ -26,7 +26,7 @@ new Phaser.Game({
     },
     create: function () {
       this.add.sprite(0, 0, "background").setOrigin(0, 0);
-      conrad = new Conrad(this, "conrad", { x: 0, y: 32 }, KEYS, true);
+      conrad = new Conrad(this, "conrad", { x: 48, y: 32 }, KEYS);
       this.add.existing(conrad);
     },
     update: function () {

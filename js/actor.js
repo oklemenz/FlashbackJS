@@ -242,10 +242,10 @@ export default class Actor extends Phaser.GameObjects.Container {
     this.x = this.position.x + this.offset.x;
     this.y = this.position.y + this.offset.y;
     if (previous.x !== this.x) {
-      console.log("=> misaligned-x", animation.key, frame.index, previous.x, this.x);
+      console.error("=> misaligned-x", animation.key, frame.index, previous.x, this.x);
     }
     if (previous.y !== this.y) {
-      console.log("=> misaligned-y", animation.key, frame.index, previous.y, this.y);
+      console.error("=> misaligned-y", animation.key, frame.index, previous.y, this.y);
     }
   }
 
