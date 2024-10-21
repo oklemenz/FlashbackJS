@@ -33,6 +33,8 @@ Conrad's animations in Flashback executed by a [state engine (actor.js)](./js/ac
   - `SHIFT`: Run, Fire
   - `SPACE`: Draw Gun
   - `ENTER`: Action
+- Mouse
+  - See Touch Controls for Mobile
 - Touch Controls (tap/drag area on screen):
 
   ![Mobile](assets/mobile.svg)
