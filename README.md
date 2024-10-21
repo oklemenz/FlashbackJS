@@ -33,6 +33,24 @@ Conrad's animations in Flashback executed by a [state engine (actor.js)](./js/ac
   - `SHIFT`: Run, Fire
   - `SPACE`: Draw Gun
   - `ENTER`: Action
+- Touch Controls (tap/drag area on screen):
+
+  ![Mobile](assets/mobile.svg)
+ 
+  - Use screen as D-Pad
+    - _Far left_: Run left
+    - _Middle left_: Walk left
+    - _Far right_: Run right
+    - _Middle right_: Walk right
+    - _Up_: Jump
+    - _Down_: Crouch
+    - _Middle_:
+      - _1 finger_: Shoot
+      - _2 fingers_: Draw Gun
+      - _3 fingers_: Activate
+  - Dragging can be used to trigger continuous move sequences, e.g.
+    - **Run Jump**: Tap far left or right -> Hold -> Drag in Left or Right upper corner
+    - **Run Roll**: Down -> Hold -> Drag in Left or Right bottom corner
 
 ## Play Locally
 
