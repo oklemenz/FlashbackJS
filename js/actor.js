@@ -24,7 +24,6 @@ export default class Actor extends Phaser.GameObjects.Container {
         };
         this.input = {};
         this.pointer = {};
-        this.activePointers = 0;
         this.state = null;
         this.action = null;
         this.log = log;
@@ -38,6 +37,7 @@ export default class Actor extends Phaser.GameObjects.Container {
     }
 
     update() {
+        this._processPointer();
         this._processInput();
     }
 
@@ -272,35 +272,56 @@ export default class Actor extends Phaser.GameObjects.Container {
     }
 
     _bindPointer(scene) {
-        scene.input.on("pointerdown", (pointer) => {
-            this.activePointers++;
-            this._handlePointer(pointer);
-        }, this);
-        scene.input.on("pointermove", this._handlePointer, this);
-        scene.input.on("pointerup", (pointer) => {
-            this.activePointers--;
-            this._handlePointer(pointer);
-        }, this);
+        scene.input.addPointer();
+        scene.input.addPointer();
     }
 
-    _handlePointer(pointer) {
-        if (pointer.isDown && this.activePointers >= 0) {
-            const middle = pointer.x >= this.scene.scale.width / 3 &&
-                pointer.x <= 2 * this.scene.scale.width / 3 &&
-                pointer.y >= this.scene.scale.height / 3 &&
-                pointer.y <= 2 * this.scene.scale.height / 3;
+    _processPointer() {
+        const pointer = this._gamePointer();
+        const size = this.scene.scale;
+        console.log(pointer, size.width, size.height);
+        if (pointer) {
+            const middle = pointer.x >= size.width / 3 && pointer.x <= 2 * size.width / 3 && pointer.y >= size.height / 3 && pointer.y <= 2 * size.height / 3;
+            const end = (pointer.x <= size.width / 6 || pointer.x >= 5 * size.width / 6) && pointer.y >= 0 && pointer.y <= size.height;
             this.pointer = {
-                left: pointer.x < this.scene.scale.width / 3,
-                right: pointer.x > 2 * this.scene.scale.width / 3,
-                up: pointer.y < this.scene.scale.height / 3,
-                down: pointer.y > 2 * this.scene.scale.height / 3,
-                fire: middle && this.activePointers === 1 || pointer.x <= 1 * this.scene.scale.width / 6 || pointer.x >= 5 * this.scene.scale.width / 6,
-                draw: middle && this.activePointers === 2,
-                action: middle && this.activePointers === 3,
-
+                left: pointer.x >= 0 && pointer.x <= size.width / 3 && pointer.y >= 0 && pointer.y <= size.height,
+                right: pointer.x >= 2 * size.width / 3 && pointer.x <= size.width && pointer.y >= 0 && pointer.y <= size.height,
+                up: pointer.x >= 0 && pointer.x <= size.width && pointer.y >= 0 && pointer.y <= size.height / 3,
+                down: pointer.x >= 0 && pointer.x <= size.width && pointer.y >= 2 * size.height / 3 && pointer.y <= size.height,
+                fire: middle || end,
+                draw: middle && this.scene.input.pointer1.isDown && this.scene.input.pointer2.isDown, // TODO
+                // action: middle, // TODO
             };
         } else {
-            this.pointer = {}
+            this.pointer = {};
         }
+    }
+
+    _gamePointer() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const size = this._gameSize();
+        const x = (this.scene.input.activePointer.isDown && this.scene.input.activePointer.x) || (this.scene.input.pointer1.isDown && this.scene.input.pointer1.x) || (this.scene.input.pointer2.isDown && this.scene.input.pointer2.x) || undefined;
+        const y = (this.scene.input.activePointer.isDown && this.scene.input.activePointer.y) || (this.scene.input.pointer1.isDown && this.scene.input.pointer1.y) || (this.scene.input.pointer2.isDown && this.scene.input.pointer2.y) || undefined;
+        if (x !== undefined && y !== undefined) {
+            const o = {
+                x: (width - size.width) / 2, y: (height - size.height) / 2,
+            }
+            return {
+                x: (x * width - o.x * this.scene.scale.width) / size.width, // (x - o.x * this.scene.scale.width / width) * width / size.width,
+                y: (y * height - o.y * this.scene.scale.height) / size.height, // (y - o.y * this.scene.scale.height / height) * height / size.height,
+            };
+        }
+    }
+
+    _gameSize() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const ratio = this.scene.scale.width / this.scene.scale.height;
+        return width / height >= ratio ? {
+            width: height * ratio, height
+        } : {
+            width, height: width / ratio
+        };
     }
 }
