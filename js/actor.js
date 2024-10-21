@@ -274,6 +274,7 @@ export default class Actor extends Phaser.GameObjects.Container {
     _bindPointer(scene) {
         scene.input.addPointer();
         scene.input.addPointer();
+        scene.input.addPointer();
     }
 
     _processPointer() {
@@ -289,8 +290,8 @@ export default class Actor extends Phaser.GameObjects.Container {
                 up: pointer.x >= 0 && pointer.x <= size.width && pointer.y >= 0 && pointer.y <= size.height / 3,
                 down: pointer.x >= 0 && pointer.x <= size.width && pointer.y >= 2 * size.height / 3 && pointer.y <= size.height,
                 fire: middle || end,
-                draw: middle && this.scene.input.pointer1.isDown && this.scene.input.pointer2.isDown, // TODO
-                // action: middle, // TODO
+                draw: middle && this.scene.input.pointer1.isDown && this.scene.input.pointer2.isDown && !this.scene.input.pointer3.isDown,
+                action: middle && this.scene.input.pointer1.isDown && this.scene.input.pointer2.isDown && this.scene.input.pointer3.isDown,
             };
         } else {
             this.pointer = {};
