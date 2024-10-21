@@ -302,11 +302,18 @@ export default class Actor extends Phaser.GameObjects.Container {
         const width = window.innerWidth;
         const height = window.innerHeight;
         const size = this._gameSize();
-        const x = (this.scene.input.activePointer.isDown && this.scene.input.activePointer.x) || (this.scene.input.pointer1.isDown && this.scene.input.pointer1.x) || (this.scene.input.pointer2.isDown && this.scene.input.pointer2.x) || undefined;
-        const y = (this.scene.input.activePointer.isDown && this.scene.input.activePointer.y) || (this.scene.input.pointer1.isDown && this.scene.input.pointer1.y) || (this.scene.input.pointer2.isDown && this.scene.input.pointer2.y) || undefined;
+        const x = this.scene.input.activePointer.isDown && this.scene.input.activePointer.x ||
+            this.scene.input.pointer1.isDown && this.scene.input.pointer1.x ||
+            this.scene.input.pointer2.isDown && this.scene.input.pointer2.x ||
+            undefined;
+        const y = this.scene.input.activePointer.isDown && this.scene.input.activePointer.y ||
+            this.scene.input.pointer1.isDown && this.scene.input.pointer1.y ||
+            this.scene.input.pointer2.isDown && this.scene.input.pointer2.y ||
+            undefined;
         if (x !== undefined && y !== undefined) {
             const o = {
-                x: (width - size.width) / 2, y: (height - size.height) / 2,
+                x: (width - size.width) / 2,
+                y: (height - size.height) / 2,
             }
             return {
                 x: (x * width - o.x * this.scene.scale.width) / size.width, // (x - o.x * this.scene.scale.width / width) * width / size.width,
