@@ -280,10 +280,9 @@ export default class Actor extends Phaser.GameObjects.Container {
     _processPointer() {
         const pointer = this._gamePointer();
         const size = this.scene.scale;
-        console.log(pointer, size.width, size.height);
         if (pointer) {
             const middle = pointer.x >= size.width / 3 && pointer.x <= 2 * size.width / 3 && pointer.y >= size.height / 3 && pointer.y <= 2 * size.height / 3;
-            const end = (pointer.x <= size.width / 6 || pointer.x >= 5 * size.width / 6) && pointer.y >= 0 && pointer.y <= size.height;
+            const end = ((pointer.x >= 0 && pointer.x <= size.width / 6) || (pointer.x >= 5 * size.width / 6 && pointer.x <= size.width)) && pointer.y >= 0 && pointer.y <= size.height;
             this.pointer = {
                 left: pointer.x >= 0 && pointer.x <= size.width / 3 && pointer.y >= 0 && pointer.y <= size.height,
                 right: pointer.x >= 2 * size.width / 3 && pointer.x <= size.width && pointer.y >= 0 && pointer.y <= size.height,
@@ -305,10 +304,12 @@ export default class Actor extends Phaser.GameObjects.Container {
         const x = this.scene.input.activePointer.isDown && this.scene.input.activePointer.x ||
             this.scene.input.pointer1.isDown && this.scene.input.pointer1.x ||
             this.scene.input.pointer2.isDown && this.scene.input.pointer2.x ||
+            this.scene.input.pointer2.isDown && this.scene.input.pointer3.x ||
             undefined;
         const y = this.scene.input.activePointer.isDown && this.scene.input.activePointer.y ||
             this.scene.input.pointer1.isDown && this.scene.input.pointer1.y ||
             this.scene.input.pointer2.isDown && this.scene.input.pointer2.y ||
+            this.scene.input.pointer2.isDown && this.scene.input.pointer3.y ||
             undefined;
         if (x !== undefined && y !== undefined) {
             const o = {
