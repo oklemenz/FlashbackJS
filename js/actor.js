@@ -304,12 +304,12 @@ export default class Actor extends Phaser.GameObjects.Container {
         const x = this.scene.input.activePointer.isDown && this.scene.input.activePointer.x ||
             this.scene.input.pointer1.isDown && this.scene.input.pointer1.x ||
             this.scene.input.pointer2.isDown && this.scene.input.pointer2.x ||
-            this.scene.input.pointer2.isDown && this.scene.input.pointer3.x ||
+            this.scene.input.pointer3.isDown && this.scene.input.pointer3.x ||
             undefined;
         const y = this.scene.input.activePointer.isDown && this.scene.input.activePointer.y ||
             this.scene.input.pointer1.isDown && this.scene.input.pointer1.y ||
             this.scene.input.pointer2.isDown && this.scene.input.pointer2.y ||
-            this.scene.input.pointer2.isDown && this.scene.input.pointer3.y ||
+            this.scene.input.pointer3.isDown && this.scene.input.pointer3.y ||
             undefined;
         if (x !== undefined && y !== undefined) {
             const o = {
