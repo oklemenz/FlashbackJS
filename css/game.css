@@ -5,15 +5,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: black;
-    overflow: hidden;
-}
-
-body,
-body * {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    user-select: none;
-    overflow: hidden;
 }
 
 @media (orientation: landscape) {
@@ -24,17 +15,11 @@ body * {
     }
 }
 
-@supports (-webkit-touch-callout: none) {
-    body {
-        margin-top: 0.5px;
-    }
-}
-
-canvas {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain;
-    image-rendering: pixelated;
+body,
+body * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .game {
@@ -64,3 +49,9 @@ canvas {
     }
 }
 
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
