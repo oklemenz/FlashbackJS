@@ -22,14 +22,7 @@ body * {
     user-select: none;
 }
 
-.game {
-    display: block;
-    touch-action: none;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-}
-
+.game, 
 .game_container {
     display: block;
     touch-action: none;
@@ -39,10 +32,7 @@ body * {
 }
 
 @media (orientation: landscape) {
-    .game {
-        width: 100vw;
-        height: 100vh;
-    }
+    .game,
     .game_container {
         width: 100vw;
         height: 100vh;
